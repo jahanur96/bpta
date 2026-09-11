@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>সংগঠনের ইতিহাস | বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি</title>
+    <meta name="description" content="বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির ইতিহাস, উদ্ভব, অগ্রযাত্রা ও অর্জনের গল্প" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <style>
+      body {
+        background: #f7faf9;
+      }
+
+      .history-page-hero {
+        background: linear-gradient(135deg, rgba(13,79,77,0.96), rgba(7,51,48,0.8)),
+          url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        color: #fff;
+        padding: 5rem 0 4rem;
+      }
+
+      .history-page-hero .breadcrumb {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 999px;
+        display: inline-flex;
+        padding: 0.5rem 0.9rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .history-page-hero .breadcrumb a,
+      .history-page-hero .breadcrumb span {
+        color: rgba(255,255,255,0.88);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .history-page-hero h1 {
+        font-size: clamp(2.4rem, 3vw + 1rem, 4rem);
+        font-weight: 800;
+        line-height: 1.12;
+        margin: 0 0 1rem;
+      }
+
+      .history-page-hero p {
+        max-width: 780px;
+        font-size: 1.08rem;
+        color: rgba(255,255,255,0.85);
+        margin: 0;
+      }
+
+      .history-section {
+        padding: 5rem 0;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(13,79,77,0.3), rgba(13,79,77,0.08));
+      }
+
+      .timeline-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .timeline-dot {
+        position: relative;
+        z-index: 1;
+        width: 26px;
+        height: 26px;
+        margin-top: 0.4rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        border: 4px solid #fff;
+        box-shadow: 0 8px 18px rgba(13,79,77,0.18);
+      }
+
+      .timeline-card {
+        background: #fff;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(13,79,77,0.08);
+        box-shadow: 0 16px 32px rgba(13,79,77,0.06);
+        padding: 1.5rem 1.4rem;
+      }
+
+      .timeline-year {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.38rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(13,79,77,0.08);
+        color: var(--primary);
+        font-weight: 800;
+        letter-spacing: 0.04rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .timeline-card h3 {
+        margin: 0 0 0.7rem;
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+
+      .timeline-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      .achievement-card {
+        background: linear-gradient(180deg, #ffffff, #f4faf9);
+        border: 1px solid rgba(13,79,77,0.08);
+        border-radius: 1.2rem;
+        padding: 1.5rem 1.3rem;
+        text-align: center;
+        box-shadow: 0 14px 30px rgba(13,79,77,0.04);
+      }
+
+      .achievement-card .icon {
+        display: inline-flex;
+        width: 3.3rem;
+        height: 3.3rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(13,79,77,0.08);
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .achievement-card h3 {
+        color: var(--primary-dark);
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .achievement-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .quote-box {
+        background: linear-gradient(135deg, rgba(13,79,77,0.95), rgba(7,51,48,0.9));
+        border-radius: 1.5rem;
+        padding: 2rem;
+        color: #fff;
+        box-shadow: var(--card-shadow);
+      }
+
+      .quote-box p {
+        margin: 0;
+        font-size: 1.15rem;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 991.98px) {
+        .achievement-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .history-page-hero {
+          padding-top: 4rem;
+          padding-bottom: 3.5rem;
+        }
+
+        .timeline-item {
+          grid-template-columns: 24px 1fr;
+          gap: 1rem;
+        }
+
+        .timeline::before {
+          left: 10px;
+        }
+
+        .quote-box {
+          padding: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="history-page">
+    <div class="topbar">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="topbar-links">
+          <span><i class="bi bi-envelope-fill"></i> info@bpta-bd.org</span>
+          <span><i class="bi bi-telephone-fill"></i> +৮৮০ ১৭১২-345678</span>
+        </div>
+        <div class="topbar-actions">
+          <a href="login.html">সদস্য লগইন</a>
+          <span id="current-time" class="badge rounded-pill"></span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+          <img src="images/logo.jfif" alt="বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি" class="brand-logo" />
+          <div class="brand-text-wrap">
+            <div class="brand-name">বাপশিস</div>
+            <small class="brand-subtitle">BPTA</small>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="about.html" aria-expanded="false">আমাদের সম্পর্কে</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="আমাদের সম্পর্কে মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid">
+                  <div class="mega-column">
+                    <h6>সংগঠন</h6>
+                    <a class="dropdown-item" href="history.html">সংগঠনের ইতিহাস</a>
+                    <a class="dropdown-item" href="mission-vision.html">লক্ষ্য ও উদ্দেশ্য</a>
+                    <a class="dropdown-item" href="#">গঠনতন্ত্র</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>নেতৃত্ব</h6>
+                    <a class="dropdown-item" href="#">কেন্দ্রীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">সভাপতি বক্তব্য</a>
+                    <a class="dropdown-item" href="#">মহাসচিবের বার্তা</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">আমাদের মূল কথা</span>
+                    <h5>শিক্ষকদের অধিকার ও সহযোগিতা</h5>
+                    <p>কারিগরি শিক্ষার মানোন্নয়নে ঐক্যবদ্ধ ও দায়িত্বশীল নেতৃত্ব গড়তে আমরা কাজ করছি।</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="login.html" aria-expanded="false">সদস্য</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="সদস্য মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>সদস্য</h6>
+                    <a class="dropdown-item" href="#">সদস্য তালিকা</a>
+                    <a class="dropdown-item" href="#">সদস্য প্রোফাইল</a>
+                    <a class="dropdown-item" href="#">সদস্য সেবা</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>একাউন্ট</h6>
+                    <a class="dropdown-item" href="#">সদস্য নিবন্ধন</a>
+                    <a class="dropdown-item" href="#">সদস্য লগইন</a>
+                    <a class="dropdown-item" href="#">পাসওয়ার্ড রিসেট</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">ড্যাশবোর্ড</span>
+                    <h5>সদস্য সুবিধা</h5>
+                    <p>প্রোফাইল, নোটিশ, ইভেন্ট ও ডকুমেন্ট একসাথে সুবিধাজনকভাবে দেখুন।</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="teacher.html" aria-expanded="false">কমিটি</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="কমিটি মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>কেন্দ্রীয়</h6>
+                    <a class="dropdown-item" href="#">কেন্দ্রীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">উপদেষ্টা কমিটি</a>
+                    <a class="dropdown-item" href="#">অভ্যন্তরীণ কমিটি</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>অঞ্চলভিত্তিক</h6>
+                    <a class="dropdown-item" href="#">বিভাগীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">জেলা কমিটি</a>
+                    <a class="dropdown-item" href="#">প্রতিষ্ঠান কমিটি</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">সংগঠন</span>
+                    <h5>শক্তিশালী নেতৃত্ব কাঠামো</h5>
+                    <p>কেন্দ্রীয়, বিভাগীয় ও প্রতিষ্ঠানের নেতৃত্বকে সুন্দরভাবে সাজানো হয়েছে।</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="notice.html" aria-expanded="false">সংবাদ</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="সংবাদ মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>সংগঠনের খবর</h6>
+                    <a class="dropdown-item" href="#">সংগঠনের সংবাদ</a>
+                    <a class="dropdown-item" href="#">সভার নোটিশ</a>
+                    <a class="dropdown-item" href="#">আন্তর্জাতিক খবর</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>শিক্ষা</h6>
+                    <a class="dropdown-item" href="#">পলিটেকনিক সংবাদ</a>
+                    <a class="dropdown-item" href="#">কারিগরি শিক্ষা সংবাদ</a>
+                    <a class="dropdown-item" href="#">শিক্ষক সম্পর্কিত সংবাদ</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">সর্বশেষ</span>
+                    <h5>তথ্যভিত্তিক সংবাদ</h5>
+                    <p>সদস্য ও সমাজের কাছে সঠিক ও দ্রুত তথ্য পৌঁছে দেওয়ার ব্যবস্থা রয়েছে।</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#notice">নোটিশ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#events">কর্মসূচি</a></li>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="notice.html" aria-expanded="false">প্রকাশনা</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="প্রকাশনা মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu small-mega">
+                <div class="mega-menu-grid two-col">
+                  <div class="mega-column">
+                    <h6>প্রকাশনা</h6>
+                    <a class="dropdown-item" href="#">স্মরণিকা</a>
+                    <a class="dropdown-item" href="#">ম্যাগাজিন</a>
+                    <a class="dropdown-item" href="#">গবেষণা</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>ডকুমেন্ট</h6>
+                    <a class="dropdown-item" href="#">ডকুমেন্ট</a>
+                    <a class="dropdown-item" href="#">নির্দেশিকা</a>
+                    <a class="dropdown-item" href="#">ফরম</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="about.html" aria-expanded="false">গ্যালারি</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="গ্যালারি মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu small-mega">
+                <div class="mega-menu-grid two-col">
+                  <div class="mega-column">
+                    <h6>গ্যালারি</h6>
+                    <a class="dropdown-item" href="#">ছবি</a>
+                    <a class="dropdown-item" href="#">ভিডিও</a>
+                    <a class="dropdown-item" href="#">ইভেন্ট</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">সাম্প্রতিক</span>
+                    <h5>কার্যক্রম ও স্মৃতি</h5>
+                    <p>সাংগঠনিক কার্যক্রম, সেমিনার ও সদস্যদের স্মরণীয় মুহূর্তগুলো দেখুন।</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#">সদস্য সেবা</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">যোগাযোগ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="history-page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">হোম</a>
+          <span class="mx-2">/</span>
+          <span>সংগঠনের ইতিহাস</span>
+        </nav>
+        <span class="section-tag">আমাদের যাত্রা</span>
+        <h1>সংগঠনের ইতিহাস</h1>
+        <p>
+          বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি একদল ঐক্যবদ্ধ শিক্ষকের উদ্যোগ, চেতনা ও নিরলস শ্রমের ফসল।
+          গণমানুষের সেবার উদ্দেশ্যে প্রতিষ্ঠিত এই সমিতি পলিটেকনিক শিক্ষার মান, মর্যাদা ও নেতৃত্বকে এগিয়ে নিয়ে চলেছে।
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="history-section">
+        <div class="container">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">১৯৯৫</div>
+                <h3>প্রতিষ্ঠার উত্তরণ</h3>
+                <p>
+                  পলিটেকনিক শিক্ষকদের সম্মিলিত কণ্ঠ, স্বার্থ সংরক্ষণ ও প্রফেশনাল সংস্কৃতির বিকাশের জন্য বাপশিসের ভিত্তি গড়েছিল।
+                  এই উদ্যোগের মূল লক্ষ্য ছিল কারিগরি ও প্রযুক্তিগত শিক্ষার মানোন্নয়ন ও শিক্ষকদের মর্যাদা রক্ষা।
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">২০০৫</div>
+                <h3>সংগঠনিক বিস্তার</h3>
+                <p>
+                  সদস্যসংখ্যা ও কার্যক্রম বৃদ্ধির সঙ্গে সঙ্গে সমিতির কাঠামো আরও বর্ধিত হয়। বিভাগীয় ও জেলা পর্যায়ে কমিটি গঠিত হয়,
+                  যা শিক্ষকদের সাথে সামনের স্তরে সরাসরি যোগাযোগ বাড়ায়।
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">২০১৪</div>
+                <h3>শিক্ষা ও নৈতিক নেতৃত্ব</h3>
+                <p>
+                  এই পর্যায়ে সমিতি শিক্ষা, নীতি, অধিকার ও সামাজিক সচেতনতার ক্ষেত্রে আরও কার্যকরী ভূমিকা গ্রহণ করে।
+                  কারিগরি শিক্ষার দিকনির্দেশনা, শিক্ষক-সম্মেলন ও জনসম্পৃক্ততা কার্যক্রমের প্রসার ঘটে।
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-year">২০২৪+</div>
+                <h3>ডিজিটাল যুগে নতুন দিগন্ত</h3>
+                <p>
+                  এখন সমিতি ডিজিটাল নেটওয়ার্ক, অনলাইনে সদস্য সেবা, নোটিশ, তথ্য প্রকাশ ও উন্নত যোগাযোগ ব্যবস্থার মাধ্যমে
+                  নতুন আঙ্গিকে এগিয়ে যাচ্ছে—এমন একটি ভবিষ্যতের জন্য, যেখানে শিক্ষক ও শিক্ষার্থীর উন্নয়ন অগ্রাধিকার পাচ্ছে।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section" style="background: #fff;">
+        <div class="container">
+          <div class="section-heading text-center">
+            <span class="section-tag dark">অর্জন</span>
+            <h2>আমাদের অগ্রগতি ও সেবার বৃত্ত</h2>
+          </div>
+          <div class="achievement-grid">
+            <article class="achievement-card">
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
+              <h3>১২,০০০+ সদস্য</h3>
+              <p>দেশের বিভিন্ন পলিটেকনিক পর্যায়ে সক্রিয় ও ঐক্যবদ্ধ সদস্যবৃন্দের শক্তিশালী নেটওয়ার্ক।</p>
+            </article>
+            <article class="achievement-card">
+              <div class="icon"><i class="bi bi-building"></i></div>
+              <h3>৮৪ প্রতিষ্ঠান</h3>
+              <p>বিভিন্ন পলিটেকনিকের সঙ্গে যুক্ত হয়ে কারিগরি শিক্ষার নীতি ও মানে প্রভাব ফেলছে সমিতি।</p>
+            </article>
+            <article class="achievement-card">
+              <div class="icon"><i class="bi bi-award-fill"></i></div>
+              <h3>সহযোগিতার সংস্কৃতি</h3>
+              <p>শিক্ষক, প্রশাসন ও সমাজের সঙ্গে সমন্বিতভাবে কাজ করে চলেছে আমাদের সেবামূলক দৃষ্টিভঙ্গি।</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div class="container">
+          <div class="quote-box">
+            <p>
+              “আমাদের অগ্রযাত্রা শিক্ষকদের সম্মিলিত চেতনার উপর দাঁড়িয়ে।
+              আমরা বিশ্বাস করি, কারিগরি শিক্ষা সুশিক্ষিত, সজাগ ও নৈতিক নেতৃত্বের মাধ্যমেই উন্নত ও সমৃদ্ধ হতে পারে।”
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-cta">
+        <div>
+          <p class="footer-kicker">আমাদের সঙ্গে থাকুন</p>
+          <h2>শিক্ষক ঐক্য, উন্নয়ন ও সেবার পথে এগিয়ে চলি।</h2>
+        </div>
+        <a class="footer-cta-link" href="about.html">আমাদের সম্পর্কে <span aria-hidden="true">&#8594;</span></a>
+      </div>
+      <div class="container footer-main">
+        <div class="footer-intro">
+          <a class="footer-brand" href="index.html"><span aria-hidden="true">&#9733;</span> বাপশিস</a>
+          <p>কারিগরি শিক্ষার মানোন্নয়নে শিক্ষক ঐক্যের অগ্রযাত্রা অব্যাহত।</p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#facebook" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="#instagram" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#youtube" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>এক্সপ্লোর</h3>
+          <a href="about.html">আমাদের সম্পর্কে</a>
+          <a href="history.html">সংগঠনের ইতিহাস</a>
+          <a href="notice.html">নোটিশ</a>
+          <a href="login.html">সদস্য লগইন</a>
+        </div>
+        <div class="footer-column">
+          <h3>সদস্য সেবা</h3>
+          <a href="#">সদস্য তালিকা</a>
+          <a href="#">সদস্য প্রোফাইল</a>
+          <a href="#">ডকুমেন্ট</a>
+          <a href="#">ফরম</a>
+        </div>
+        <div class="footer-column footer-contact">
+          <h3>যোগাযোগ</h3>
+          <p>ঢাকা, বাংলাদেশ</p>
+          <a href="tel:+8801712345678">+৮৮০ ১৭১২-345678</a>
+          <a href="mailto:info@bpta-bd.org">info@bpta-bd.org</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; ২০২৬ বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি। সর্বস্বত্ব সংরক্ষিত।</span>
+        <span>শিক্ষা, নেতৃত্ব ও সেবার জন্য।</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

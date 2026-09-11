@@ -24,11 +24,23 @@
         width: 100%;
     }
 
+    .nav-dropdown-wrap {
+        align-items: center;
+        gap: 0.5rem;
+    }
+
     .nav-link {
         display: block;
         width: 100%;
         padding: 0.8rem 0.9rem !important;
         white-space: normal;
+    }
+
+    .dropdown-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
     .dropdown-menu {
@@ -40,6 +52,11 @@
         margin-top: 0.25rem;
         border-radius: 0.9rem;
         box-shadow: none;
+        display: none;
+    }
+
+    .nav-item.dropdown.show > .dropdown-menu {
+        display: block;
     }
 
     .mega-menu,
@@ -56,6 +73,12 @@
 
     .highlight-column {
         min-height: 170px;
+    }
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu-toggle {
+        display: none !important;
     }
 }
 
