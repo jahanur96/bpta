@@ -1,0 +1,301 @@
+১. Homepage
+
+প্রথম পেজে থাকবে:
+
+🏛️ সংগঠনের Logo + নাম
+📢 গুরুত্বপূর্ণ ঘোষণা
+📰 সর্বশেষ সংবাদ
+📅 upcoming events
+👨‍🏫 সদস্য সংখ্যা
+🏫 পলিটেকনিক সংখ্যা
+📄 গুরুত্বপূর্ণ নোটিশ
+📸 সাম্প্রতিক কার্যক্রম
+🔗 গুরুত্বপূর্ণ সরকারি/শিক্ষা প্রতিষ্ঠানের লিংক
+
+একটি Hero Section হতে পারে:
+
+বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি
+কারিগরি শিক্ষার উন্নয়ন ও শিক্ষকদের অধিকার প্রতিষ্ঠায় ঐক্যবদ্ধ প্ল্যাটফর্ম
+
+🧭 ২. Main Menu Structure
+
+আমি এই ধরনের Menu সাজেস্ট করব:
+
+হোম
+│
+├── আমাদের সম্পর্কে
+│   ├── সংগঠনের ইতিহাস
+│   ├── লক্ষ্য ও উদ্দেশ্য
+│   ├── গঠনতন্ত্র
+│   └── কেন্দ্রীয় কমিটি
+│
+├── সদস্য
+│   ├── সদস্য তালিকা
+│   ├── সদস্য নিবন্ধন
+│   ├── সদস্য লগইন
+│   └── সদস্য প্রোফাইল
+│
+├── কমিটি
+│   ├── কেন্দ্রীয় কমিটি
+│   ├── বিভাগীয় কমিটি
+│   └── জেলা/প্রতিষ্ঠান কমিটি
+│
+├── সংবাদ
+│   ├── সংগঠনের সংবাদ
+│   ├── পলিটেকনিক সংবাদ
+│   └── কারিগরি শিক্ষা সংবাদ
+│
+├── নোটিশ
+│
+├── কর্মসূচি
+│
+├── প্রকাশনা
+│   ├── স্মরণিকা
+│   ├── ম্যাগাজিন
+│   ├── গবেষণা
+│   └── ডকুমেন্ট
+│
+├── গ্যালারি
+│   ├── ছবি
+│   └── ভিডিও
+│
+├── সদস্য সেবা
+│
+└── যোগাযোগ
+
+৩. সবচেয়ে গুরুত্বপূর্ণ Feature — Member Portal
+
+এটাই ওয়েবসাইটের সবচেয়ে শক্তিশালী অংশ হতে পারে।
+
+প্রতিটি শিক্ষক নিজের account তৈরি করবেন।
+
+Member Profile
+┌──────────────────────────────┐
+│       Teacher Profile        │
+├──────────────────────────────┤
+│ Photo                        │
+│ Name                         │
+│ Designation                  │
+│ Institute                    │
+│ Department                   │
+│ Employee ID                  │
+│ Mobile                       │
+│ Email                        │
+│ Membership No                │
+└──────────────────────────────┘
+Member Dashboard
+Welcome, Md. XXXXX
+
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│ Profile │ │ Notices │ │ Events  │
+└─────────┘ └─────────┘ └─────────┘
+
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│Documents│ │ Payments│ │ Support │
+└─────────┘ └─────────┘ └─────────┘
+🪪 ৪. Digital Membership Card
+
+এটি খুব সুন্দর একটি feature হতে পারে।
+
+প্রতিটি সদস্যের জন্য:
+
+Digital Membership ID Card
+
+┌──────────────────────────────┐
+│ BANGLADESH POLYTECHNIC       │
+│ TEACHERS ASSOCIATION         │
+│                              │
+│        [PHOTO]               │
+│                              │
+│ Name: XXXXX XXXXX            │
+│ Designation: Instructor      │
+│ Institute: XXXXX Polytechnic │
+│ Member ID: BPTA-000123       │
+│                              │
+│        [QR CODE]             │
+└──────────────────────────────┘
+
+QR Code scan করলে সদস্যের membership verification page খুলবে।
+
+📢 ৫. Notice Management System
+
+Admin panel থেকে notice publish করা যাবে।
+
+যেমন:
+
+সভার নোটিশ
+সরকারি প্রজ্ঞাপন
+বদলি সংক্রান্ত তথ্য
+পদোন্নতি সংক্রান্ত তথ্য
+বেতন/ভাতা সংক্রান্ত তথ্য
+সংগঠনের সিদ্ধান্ত
+জরুরি ঘোষণা
+
+প্রতিটি notice-এর সাথে:
+
+Title
+Published Date
+Category
+Description
+PDF Attachment
+Download
+Share
+📰 ৬. News & Article System
+
+শুধু সংগঠনের সংবাদ নয়, কারিগরি শিক্ষা বিষয়ক তথ্য প্রকাশ করা যেতে পারে।
+
+Category:
+
+সংগঠনের খবর
+কারিগরি শিক্ষা
+BTEB
+DTE
+Polytechnic
+শিক্ষক সম্পর্কিত
+চাকরি/নিয়োগ
+শিক্ষা নীতি
+মতামত
+গবেষণা
+
+এতে website-টি ধীরে ধীরে Technical Education Information Portal হিসেবেও পরিচিত হতে পারে।
+
+🏛️ ৭. Committee Management
+
+এখানে সুন্দর Organizational Structure দেখানো যাবে।
+
+              সভাপতি
+                │
+             মহাসচিব
+                │
+       ┌────────┼────────┐
+       │        │        │
+   সহ-সভাপতি  যুগ্ম সচিব  কোষাধ্যক্ষ
+       │
+ ┌─────┴─────┐
+ বিভাগীয় কমিটি
+       │
+ জেলা/প্রতিষ্ঠান কমিটি
+
+প্রতিটি কর্মকর্তার:
+
+ছবি
+নাম
+পদ
+প্রতিষ্ঠান
+বিভাগ
+যোগাযোগ
+
+দেখানো যেতে পারে।
+
+🗺️ ৮. Polytechnic Directory
+
+এটি একটি খুব ভালো unique feature হতে পারে।
+
+বাংলাদেশের সব সরকারি/বেসরকারি পলিটেকনিকের একটি directory:
+
+Search Polytechnic
+
+[ Dhaka Polytechnic        ▼ ]
+
+Dhaka Polytechnic Institute
+Location: Dhaka
+Website: XXXXX
+Teachers: 150
+Members: 87
+
+এখানে জেলা অনুযায়ী filter করা যাবে।
+
+📊 ৯. Statistics Section
+
+Homepage-এ live statistics:
+
+          65+
+     Polytechnic Institutes
+
+          5,000+
+       Registered Teachers
+
+          3,200+
+         Members
+
+          64
+         Districts
+
+এগুলো database থেকে dynamically আসবে।
+
+📅 ১০. Event Calendar
+
+সংগঠনের সব কার্যক্রম Calendar আকারে:
+
+September 2026
+
+Sun Mon Tue Wed Thu Fri Sat
+       1   2   3   4   5
+ 6   7   8   9  10  11  12
+13  14  15  16  17  18  19
+20  21  22  23  24  25  26
+27  28  29  30
+
+Event:
+
+📅 15 September
+Central Committee Meeting
+
+📚 ১১. Resource Center
+
+শিক্ষকদের জন্য একটি আলাদা Resource Library:
+
+সরকারি প্রজ্ঞাপন
+পরিপত্র
+গেজেট
+BTEB documents
+DTE documents
+Pay Scale documents
+Promotion rules
+Recruitment rules
+Service rules
+Training materials
+গুরুত্বপূর্ণ আইন/বিধিমালা
+
+Search + Category + PDF Download থাকবে।
+
+🗳️ ১২. Online Voting System
+
+ভবিষ্যতে অত্যন্ত গুরুত্বপূর্ণ feature হতে পারে।
+
+যেমন:
+
+Central Committee Election 2027
+
+Member login → ভোট → OTP/verification → Vote submitted.
+
+তবে এটি করতে হলে security, authentication এবং audit trail খুব শক্তভাবে ডিজাইন করতে হবে।
+
+💬 ১৩. Teacher Discussion Forum
+
+একটি private community:
+
+General Discussion
+├── Academic
+├── BTEB
+├── DTE
+├── Promotion
+├── Transfer
+├── Salary & Allowance
+├── Training
+└── Technical Discussion
+
+শিক্ষকরা প্রশ্ন করতে পারবেন এবং অন্য শিক্ষকরা উত্তর দিতে পারবেন।
+
+📱 ১৪. Mobile First Design
+
+বাংলাদেশের অধিকাংশ শিক্ষক website mobile দিয়ে ব্যবহার করবেন।
+
+তাই আমি:
+
+Mobile → Tablet → Desktop
+
+এই priority-তে design করার পরামর্শ দেব।
+
+
+read requirement.txt file, আমি বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি এর একটি ওয়েব সাইট তৈরি করতে চাই। যেখানে এই সকল কাজ করতে হবে। read images/logo.jfif and crate a home page with menu. you can use html, css, js and bootstrap to design it

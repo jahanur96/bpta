@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Website - Notices</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="notice-page">
+    <div class="bg-dark text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>
+          <span class="me-3">&#9993; info@school.com</span>
+          <span>&#9742; +880 1700000010</span>
+        </div>
+        <div>
+          <a href="login.html" class="text-white text-decoration-none">Login</a>
+          <span id="current-time" class="ms-3 badge bg-primary"></span>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold text-primary" href="index.html"
+          >&#127891; SCHOOL LOGO</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center text-uppercase">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teacher.html">Teacher</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="student.html">Student</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="academic.html"
+                >Academic</a
+              >
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                <li>
+                  <a class="dropdown-item" href="academic.html"
+                    >Academic Programs</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="academic.html#science"
+                    >Science</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="academic.html#arts">Arts</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="academic.html#commerce"
+                    >Commerce</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="result.html">Result</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="notice.html"
+                >Notice</a
+              >
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-primary rounded-pill px-4" href="login.html"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="notice-hero">
+      <div class="container">
+        <div class="notice-breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span> Notices
+        </div>
+        <h1>School Notices</h1>
+        <p>
+          Find the latest academic updates, important announcements, and
+          community information in one place.
+        </p>
+      </div>
+    </header>
+
+    <main class="notice-archive">
+      <div class="container">
+        <div class="notice-archive-heading">
+          <h2>Latest announcements</h2>
+          <span>3 published notices</span>
+        </div>
+        <div class="notice-archive-list">
+          <details class="notice-detail" id="exam-schedule" open>
+            <summary>
+              <span class="notice-archive-date">27 May 2024</span
+              ><span class="notice-archive-title"
+                >Final examinations begin next Monday</span
+              >
+            </summary>
+            <div class="notice-detail-content">
+              Students should review the examination schedule and arrive at
+              school at least 15 minutes before their first paper.
+            </div>
+          </details>
+          <details class="notice-detail" id="summer-break">
+            <summary>
+              <span class="notice-archive-date">01 Jun 2024</span
+              ><span class="notice-archive-title"
+                >Summer vacation begins in June</span
+              >
+            </summary>
+            <div class="notice-detail-content">
+              The school will remain closed during the announced summer vacation
+              period. Classes resume according to the academic calendar.
+            </div>
+          </details>
+          <details class="notice-detail" id="parent-meeting">
+            <summary>
+              <span class="notice-archive-date">08 Jun 2024</span
+              ><span class="notice-archive-title"
+                >Parents and teachers meet on Saturday</span
+              >
+            </summary>
+            <div class="notice-detail-content">
+              Parents are invited to meet the teaching team and discuss student
+              progress, attendance, and upcoming academic priorities.
+            </div>
+          </details>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-cta">
+        <div>
+          <p class="footer-kicker">Your next chapter starts here</p>
+          <h2>Come learn with us.</h2>
+        </div>
+        <a class="footer-cta-link" href="about.html"
+          >Meet our community <span aria-hidden="true">&#8594;</span></a
+        >
+      </div>
+      <div class="container footer-main">
+        <div class="footer-intro">
+          <a class="footer-brand" href="index.html"
+            ><span aria-hidden="true">&#9733;</span> SCHOOL LOGO</a
+          >
+          <p>
+            A welcoming place to think deeply, make boldly, and grow together.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#facebook" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="#instagram" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#youtube" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="about.html">About us</a
+          ><a href="academic.html">Academic programs</a
+          ><a href="teacher.html">Our teachers</a
+          ><a href="notice.html">Notice board</a>
+        </div>
+        <div class="footer-column">
+          <h3>For students</h3>
+          <a href="student.html">Student portal</a
+          ><a href="result.html">Check results</a><a href="login.html">Log in</a
+          ><a href="notice.html#parent-meeting">Parent community</a>
+        </div>
+        <div class="footer-column footer-contact">
+          <h3>Visit us</h3>
+          <p>123 School Road<br />Dhaka, Bangladesh</p>
+          <a href="tel:+8801700000010">+880 1700000010</a
+          ><a href="mailto:info@school.com">info@school.com</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; 2026School Name. All rights reserved.</span
+        ><span>Built for curious minds.</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

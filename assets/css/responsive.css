@@ -1,0 +1,103 @@
+@media (max-width: 1199.98px) {
+    .navbar-nav {
+        gap: 0.15rem;
+    }
+
+    .nav-link {
+        font-size: 0.88rem;
+        padding: 0.7rem 0.7rem !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 0.75rem;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        align-items: stretch;
+        padding: 0.5rem 0 0;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.8rem 0.9rem !important;
+        white-space: normal;
+    }
+
+    .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 0.25rem;
+        border-radius: 0.9rem;
+        box-shadow: none;
+    }
+
+    .mega-menu,
+    .small-mega {
+        min-width: 100%;
+        padding: 0.75rem;
+    }
+
+    .mega-menu-grid,
+    .mega-menu-grid.two-col,
+    .mega-menu-grid.three-col {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-column {
+        min-height: 170px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .topbar-links,
+    .topbar-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-brand {
+        width: 100%;
+    }
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .brand-subtitle {
+        letter-spacing: 0.08rem;
+    }
+
+    .hero-section {
+        padding-top: 4.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-stats {
+        gap: 1.25rem;
+    }
+
+    .hero-section h1 {
+        max-width: 100%;
+    }
+
+    .notice-item,
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
