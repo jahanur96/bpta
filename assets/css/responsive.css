@@ -27,6 +27,14 @@
     .nav-dropdown-wrap {
         align-items: center;
         gap: 0.5rem;
+        position: relative;
+        z-index: 3;
+    }
+
+    .nav-item.dropdown::after,
+    .nav-item.dropdown:hover::after,
+    .nav-item.dropdown:focus-within::after {
+        display: none !important;
     }
 
     .nav-link {
@@ -41,6 +49,8 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        position: relative;
+        z-index: 4;
     }
 
     .dropdown-menu {

@@ -179,6 +179,13 @@ a {
     z-index: 2;
 }
 
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover::after,
+    .nav-item.dropdown:focus-within::after {
+        pointer-events: auto;
+    }
+}
+
 .nav-dropdown-wrap {
     display: flex;
     align-items: center;
@@ -438,6 +445,207 @@ a {
     border-radius: 0.9rem;
     padding: 0.85rem 1rem;
     color: rgba(255,255,255,0.94);
+}
+
+.committee-page {
+    background: #f6faf9;
+}
+
+.committee-page .page-hero {
+    background: linear-gradient(135deg, rgba(13,79,77,0.96), rgba(7,51,48,0.9)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 5rem 0 4rem;
+}
+
+.committee-page .breadcrumb {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    display: inline-flex;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 1.25rem;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.committee-page .breadcrumb a,
+.committee-page .breadcrumb span {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.88rem;
+}
+
+.committee-page .hero-kicker {
+    display: inline-flex;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(244,185,66,0.15);
+    color: #f8d98b;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.08rem;
+    font-weight: 700;
+}
+
+.committee-page .page-hero h1 {
+    font-size: clamp(2.3rem, 3vw + 1rem, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin: 1rem 0 0.8rem;
+    max-width: 760px;
+}
+
+.committee-page .page-hero p {
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.08rem;
+    max-width: 760px;
+}
+
+.committee-page .committee-section {
+    padding: 5rem 0;
+}
+
+.committee-page .committee-section.office-bearer {
+    background: linear-gradient(180deg, rgba(237,245,244,0.8), #fff);
+}
+
+.committee-page .section-heading {
+    margin-bottom: 2rem;
+}
+
+.committee-page .section-heading .section-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(13,79,77,0.08);
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.committee-page .section-heading h2 {
+    margin-top: 0.8rem;
+    font-size: clamp(2rem, 2vw + 1rem, 3rem);
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.committee-page .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.committee-page .member-card {
+    background: #fff;
+    border: 1px solid rgba(13,79,77,0.08);
+    border-radius: 1.2rem;
+    padding: 1.25rem;
+    box-shadow: 0 16px 30px rgba(13,79,77,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.committee-page .member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(13,79,77,0.08);
+}
+
+.committee-page .member-image {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(13,79,77,0.08), rgba(244,185,66,0.14));
+}
+
+.committee-page .member-role {
+    display: inline-flex;
+    padding: 0.38rem 0.7rem;
+    background: rgba(13,79,77,0.08);
+    color: var(--primary);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.committee-page .member-name {
+    margin: 0 0 0.3rem;
+    color: var(--primary-dark);
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.committee-page .member-post {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.committee-page .member-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.committee-page .member-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #f4faf9;
+    border: 1px solid rgba(13,79,77,0.06);
+    border-radius: 999px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.committee-page .office-bearer .member-card {
+    border-color: rgba(13,79,77,0.07);
+}
+
+.committee-page .committee-summary {
+    background: linear-gradient(135deg, rgba(13,79,77,0.04), rgba(244,185,66,0.06));
+    border: 1px solid rgba(13,79,77,0.06);
+    border-radius: 1.2rem;
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.committee-page .committee-summary p {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .committee-page .committee-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    .committee-page .page-hero {
+        padding-top: 4rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .committee-page .committee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .committee-page .member-image {
+        height: 260px;
+    }
 }
 
 section {
@@ -1082,6 +1290,246 @@ section {
 .resource-link:hover {
     background: var(--primary);
     color: #fff;
+}
+
+.login-page {
+    background: linear-gradient(180deg, #f5faf9 0%, #edf7f7 100%);
+}
+
+.login-hero {
+    background: linear-gradient(135deg, rgba(13,79,77,0.96), rgba(7,51,48,0.86)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: var(--white);
+    padding: 5rem 0 4rem;
+}
+
+.login-hero .about-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    padding: 0.5rem 0.85rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.login-hero .about-breadcrumb a,
+.login-hero .about-breadcrumb span {
+    color: rgba(255,255,255,0.9);
+}
+
+.login-hero .about-kicker {
+    display: inline-flex;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(244,185,66,0.15);
+    color: #f8d98b;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.08rem;
+    font-weight: 700;
+}
+
+.login-hero h1 {
+    font-size: clamp(2.3rem, 3vw + 1rem, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin: 1rem 0 0.8rem;
+    max-width: 710px;
+}
+
+.login-hero p:last-child {
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    max-width: 620px;
+    font-size: 1.08rem;
+}
+
+.login-section {
+    padding: 5rem 0;
+}
+
+.login-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.login-intro {
+    padding-right: 1rem;
+}
+
+.login-intro h2 {
+    font-size: clamp(2.1rem, 2vw + 1rem, 3rem);
+    color: var(--primary-dark);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 1rem 0 1rem;
+}
+
+.login-intro p {
+    color: var(--muted);
+    font-size: 1.04rem;
+}
+
+.login-note {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(13,79,77,0.05);
+    border: 1px solid rgba(13,79,77,0.08);
+    border-radius: 1rem;
+    padding: 0.9rem 1rem;
+    margin-top: 1.5rem;
+    max-width: 430px;
+}
+
+.login-note span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(244,185,66,0.18);
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.login-note p {
+    margin: 0;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.login-card {
+    background: #fff;
+    border: 1px solid rgba(13,79,77,0.08);
+    border-radius: 1.4rem;
+    box-shadow: 0 22px 40px rgba(13,79,77,0.08);
+    padding: 2rem 1.6rem;
+}
+
+.login-card-heading {
+    margin-bottom: 1.5rem;
+}
+
+.login-card-heading span {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+}
+
+.login-card-heading h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.login-form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.login-field {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.login-field label {
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 0.96rem;
+}
+
+.login-field input {
+    width: 100%;
+    border-radius: 0.9rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(13,79,77,0.15);
+    background: #f7fbfb;
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-field input:focus {
+    outline: none;
+    border-color: rgba(13,79,77,0.45);
+    box-shadow: 0 0 0 0.2rem rgba(13,79,77,0.08);
+    background: #fff;
+}
+
+.login-form-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+}
+
+.login-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.login-form-meta a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.login-submit {
+    width: 100%;
+    border: none;
+    border-radius: 0.9rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    font-weight: 800;
+    padding: 0.95rem 1.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 14px 25px rgba(13,79,77,0.18);
+}
+
+.login-submit:hover {
+    transform: translateY(-1px);
+}
+
+.login-help-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.login-help-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.login-help-list li i {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .login-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .site-footer {
