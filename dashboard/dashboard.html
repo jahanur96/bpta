@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সদস্য ড্যাশবোর্ড | BPTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebarMenu">
+            <div class="brand-box">
+                <img src="../images/logo.jfif" alt="BPTA logo">
+                <div>
+                    <h5>বাপশিস</h5>
+                    <small>BPTA</small>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="active"><i class="bi bi-grid-1x2-fill"></i> ড্যাশবোর্ড</a>
+                <a href="profile.html"><i class="bi bi-person-badge-fill"></i> আমার প্রোফাইল</a>
+                <a href="membership-card.html"><i class="bi bi-credit-card-2-front-fill"></i> সদস্য কার্ড</a>
+                <a href="verify-member.html"><i class="bi bi-patch-check-fill"></i> সদস্য যাচাই</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../login.html" class="nav-menu" style="display:grid;">
+                    <span style="display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.88); padding:0.8rem 0.9rem; border-radius:0.9rem;">
+                        <i class="bi bi-box-arrow-right"></i> লগআউট
+                    </span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <header class="topbar">
+                <div class="title-area">
+                    <button class="icon-button d-lg-none" id="mobileToggle" type="button" aria-label="Sidebar">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h1>সদস্য ড্যাশবোর্ড</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="icon-button" type="button" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="icon-button" type="button" aria-label="Notification">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge-dot">3</span>
+                    </button>
+                    <button class="user-button" type="button" aria-label="User menu">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="User profile">
+                        <span>মোঃ জাহানুর ইসলাম</span>
+                    </button>
+                </div>
+            </header>
+
+            <section class="hero-banner">
+                <div>
+                    <span class="status-pill"><i class="bi bi-check-circle-fill"></i> Active Member</span>
+                    <h2>স্বাগতম, মোঃ জাহানুর ইসলাম</h2>
+                    <p>বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির সদস্য পোর্টালে আপনাকে স্বাগতম।</p>
+                </div>
+                <div class="status-pill"><i class="bi bi-calendar3"></i> ১৭ সেপ্টেম্বর ২০২৬</div>
+            </section>
+
+            <section class="card-box summary-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Profile image">
+                <div>
+                    <h3>মোঃ জাহানুর ইসলাম</h3>
+                    <div class="role-tag">Instructor</div>
+                    <div class="meta-tray">
+                        <span>কম্পিউটার টেকনোলজি</span>
+                        <span>কুমিল্লা পলিটেকনিক ইনস্টিটিউট</span>
+                        <span>Membership ID: BPTA-10245</span>
+                    </div>
+                </div>
+                <div class="summary-actions">
+                    <a href="profile.html" class="btn-primary-bpta">প্রোফাইল দেখুন</a>
+                    <a href="profile.html" class="btn-outline-bpta">প্রোফাইল সম্পাদনা</a>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <div class="card-box stat-box">
+                    <div class="stat-icon"><i class="bi bi-person-check-fill"></i></div>
+                    <h4>Active</h4>
+                    <small>সদস্যপদ</small>
+                    <p>সক্রিয় ও বৈধ সদস্য</p>
+                </div>
+                <div class="card-box stat-box">
+                    <div class="stat-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+                    <h4>১২</h4>
+                    <small>ডকুমেন্ট</small>
+                    <p>সর্বশেষ আপলোড: ৩ দিন আগে</p>
+                </div>
+                <div class="card-box stat-box">
+                    <div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                    <h4>৫</h4>
+                    <small>প্রশিক্ষণ</small>
+                    <p>সার্টিফিকেট যাচাইকৃত</p>
+                </div>
+                <div class="card-box stat-box">
+                    <div class="stat-icon"><i class="bi bi-activity"></i></div>
+                    <h4>৮</h4>
+                    <small>কার্যক্রম</small>
+                    <p>কেন্দ্রীয় ও আঞ্চলিক</p>
+                </div>
+            </section>
+
+            <section class="card-box panel-card" style="margin-bottom:1.5rem;">
+                <div class="panel-header">
+                    <h3>আপনার প্রোফাইল ৮৫% সম্পূর্ণ</h3>
+                    <strong style="color:var(--bpta-primary);">৮৫%</strong>
+                </div>
+                <div class="progress" style="height:12px;">
+                    <div class="progress-bar" style="width:85%; background:linear-gradient(90deg, var(--bpta-primary), #2aa382);"></div>
+                </div>
+                <p style="margin:0.9rem 0 0; color:var(--bpta-muted);">বাকি ১৫% পূরণ করলে আপনার সদস্য প্রোফাইল আরও শক্তিশালী হবে।</p>
+            </section>
+
+            <section class="info-grid">
+                <div class="card-box panel-card">
+                    <div class="panel-header">
+                        <h3>পেশাগত তথ্য</h3>
+                        <button class="btn-soft-bpta" type="button">সম্পাদনা</button>
+                    </div>
+                    <div class="info-list">
+                        <div class="info-row"><span>পদবি</span><strong>ইনস্ট্রাক্টর</strong></div>
+                        <div class="info-row"><span>বিভাগ</span><strong>কম্পিউটার টেকনোলজি</strong></div>
+                        <div class="info-row"><span>প্রতিষ্ঠান</span><strong>কুমিল্লা পলিটেকনিক ইনস্টিটিউট</strong></div>
+                        <div class="info-row"><span>যোগদানের তারিখ</span><strong>১৫ ফেব্রুয়ারি ২০২৪</strong></div>
+                    </div>
+                </div>
+
+                <div class="card-box panel-card">
+                    <div class="panel-header">
+                        <h3>সদস্যপদ তথ্য</h3>
+                        <a href="membership-card.html" class="btn-soft-bpta">বিস্তারিত</a>
+                    </div>
+                    <div class="info-list">
+                        <div class="info-row"><span>সদস্য আইডি</span><strong>BPTA-10245</strong></div>
+                        <div class="info-row"><span>সদস্যপদ ধরন</span><strong>সাধারণ সদস্য</strong></div>
+                        <div class="info-row"><span>নিবন্ধনের তারিখ</span><strong>১০ জানুয়ারি ২০২৬</strong></div>
+                        <div class="info-row"><span>অবস্থা</span><strong>সক্রিয়</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lower-grid">
+                <div class="card-box panel-card">
+                    <div class="panel-header">
+                        <h3>সর্বশেষ নোটিশ</h3>
+                        <a href="#" style="color:var(--bpta-primary); font-weight:700;">সব দেখুন</a>
+                    </div>
+                    <div class="notice-list">
+                        <article class="notice-item">
+                            <div class="notice-icon"><i class="bi bi-megaphone"></i></div>
+                            <div>
+                                <h4>কেন্দ্রীয় কমিটির সভা নোটিশ</h4>
+                                <p>১০ সেপ্টেম্বর ২০২৬, ঢাকা</p>
+                            </div>
+                        </article>
+                        <article class="notice-item">
+                            <div class="notice-icon"><i class="bi bi-file-earmark-check"></i></div>
+                            <div>
+                                <h4>বার্ষিক সাধারণ সভা</h4>
+                                <p>০৫ সেপ্টেম্বর ২০২৬, কুমিল্লা</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="card-box panel-card">
+                    <div class="panel-header">
+                        <h3>ইভেন্ট</h3>
+                        <a href="#" style="color:var(--bpta-primary); font-weight:700;">সব দেখুন</a>
+                    </div>
+                    <div class="event-list">
+                        <article class="event-item">
+                            <div class="event-date"><strong>২৫</strong><span>সেপ্টে</span></div>
+                            <div>
+                                <h4>কর্মশালা ও মতবিনিময় সভা</h4>
+                                <p>সকাল ১০:০০ | ঢাকা</p>
+                            </div>
+                        </article>
+                        <article class="event-item">
+                            <div class="event-date"><strong>১১</strong><span>অক্টো</span></div>
+                            <div>
+                                <h4>টেকনিক্যাল সেমিনার</h4>
+                                <p>সকাল ৯:৩০ | কুমিল্লা</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="card-box panel-card">
+                    <div class="panel-header">
+                        <h3>কার্যক্রম</h3>
+                    </div>
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <small>১২ জানু ২০২৬</small>
+                            <h4>সদস্যতা নবায়ন সম্পন্ন</h4>
+                            <p>ফর্ম যাচাই ও পূরণ সম্পন্ন হয়েছ</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <small>০৮ জানু ২০২৬</small>
+                            <h4>প্রশিক্ষণ সনদ জারি</h4>
+                            <p>নতুন সনদ ডাউনলোড মঞ্জুর</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <small>০২ জানু ২০২৬</small>
+                            <h4>মতবিনিময় সভা</h4>
+                            <p>কেন্দ্রীয় কমিটির আলোচনা অনুষ্ঠিত</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

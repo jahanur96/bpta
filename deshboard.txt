@@ -1,0 +1,684 @@
+Act as a senior UI/UX designer and frontend developer with 10+ years of experience.
+
+I want to create ONLY a static HTML frontend template for:
+
+"বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি"
+English: "Bangladesh Polytechnic Teachers Association"
+
+IMPORTANT:
+This is ONLY an HTML/CSS/JavaScript UI template.
+
+
+==================================================
+TECHNOLOGY
+==================================================
+
+Use only:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Bootstrap 5
+- Bootstrap Icons
+
+
+The design must be fully responsive.
+
+==================================================
+DESIGN STYLE
+==================================================
+
+use header and footer from existing index.html page
+
+Create a modern, clean and professional dashboard for a
+Bangladesh professional teachers' association.
+
+Design characteristics:
+
+- Professional
+- Elegant
+- Clean
+- Minimal
+- Government/educational organization style
+- Modern card-based UI
+- Excellent typography
+- Good whitespace
+- Subtle shadows
+- Rounded corners
+- Smooth hover effects
+- Responsive layout
+
+Primary visual identity:
+
+- Deep Green
+- White
+- Light Gray
+- Dark Text
+
+Use accent colors only when necessary for:
+- Success
+- Warning
+- Error
+- Notifications
+
+Avoid excessive gradients and flashy animations.
+
+==================================================
+PAGE 1: MEMBER DASHBOARD
+==================================================
+
+Create:
+
+dashboard/dashboard.html
+
+Layout:
+
+--------------------------------------------------
+LEFT SIDEBAR
+--------------------------------------------------
+
+
+
+Navigation:
+
+Dashboard
+আমার প্রোফাইল
+সদস্যপদ
+সদস্য কার্ড
+নোটিশ
+ইভেন্ট
+ডকুমেন্ট
+প্রশিক্ষণ ও সার্টিফিকেট
+কার্যক্রম
+সেটিংস
+
+Bottom:
+
+Logout
+
+Sidebar requirements:
+
+- Fixed sidebar on desktop
+- Collapsible
+- Mobile offcanvas/drawer
+- Active menu state
+- Bootstrap Icons
+- Smooth hover effect
+
+--------------------------------------------------
+TOP NAVBAR
+--------------------------------------------------
+
+Include:
+
+Mobile menu button
+
+Page title:
+"সদস্য ড্যাশবোর্ড"
+
+Right side:
+
+Search icon
+Notification icon with badge
+User avatar
+User name
+Dropdown
+
+Dropdown:
+
+আমার প্রোফাইল
+সেটিংস
+লগআউট
+
+--------------------------------------------------
+WELCOME SECTION
+--------------------------------------------------
+
+Display:
+
+"স্বাগতম, মোঃ জাহানুর ইসলাম"
+
+Subtitle:
+
+"বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির সদস্য পোর্টালে আপনাকে স্বাগতম।"
+
+Show:
+
+● Active Member
+
+Also show current date.
+
+--------------------------------------------------
+PROFILE SUMMARY
+--------------------------------------------------
+
+Create a large professional profile card.
+
+Left:
+
+Profile photo
+
+Middle:
+
+মোঃ জাহানুর ইসলাম
+
+Instructor
+
+Computer Technology
+
+Cumilla Polytechnic Institute
+
+Membership ID:
+BPTA-10245
+
+● Active Member
+
+Right:
+
+[প্রোফাইল দেখুন]
+[প্রোফাইল সম্পাদনা]
+
+--------------------------------------------------
+STATISTICS
+--------------------------------------------------
+
+Create 4 cards:
+
+1.
+সদস্যপদ
+Active
+
+2.
+ডকুমেন্ট
+12
+
+3.
+প্রশিক্ষণ
+5
+
+4.
+কার্যক্রম
+8
+
+Each card must contain:
+
+- Icon
+- Number
+- Label
+- Short description
+
+--------------------------------------------------
+PROFILE COMPLETION
+--------------------------------------------------
+
+Create a horizontal/compact progress card:
+
+"আপনার প্রোফাইল 85% সম্পূর্ণ"
+
+Progress bar:
+85%
+
+Message:
+
+"আপনার প্রোফাইল সম্পূর্ণ করতে আরও কিছু তথ্য যোগ করুন।"
+
+Button:
+
+[প্রোফাইল সম্পূর্ণ করুন]
+
+--------------------------------------------------
+PROFESSIONAL INFORMATION
+--------------------------------------------------
+
+Create an information card:
+
+পেশাগত তথ্য
+
+পদবি:
+Instructor
+
+টেকনোলজি:
+Computer Technology
+
+প্রতিষ্ঠান:
+Cumilla Polytechnic Institute
+
+ইনস্টিটিউট কোড:
+XXXXX
+
+যোগদানের তারিখ:
+15 February 2024
+
+গ্রেড:
+10th Grade
+
+চাকরির অবস্থা:
+Active
+
+Button:
+
+[সম্পাদনা করুন]
+
+--------------------------------------------------
+MEMBERSHIP INFORMATION
+--------------------------------------------------
+
+Card title:
+
+"সদস্যপদ তথ্য"
+
+Show:
+
+Membership ID
+BPTA-10245
+
+Membership Type
+General Member
+
+Membership Date
+10 January 2026
+
+District Unit
+Cumilla
+
+Division
+Chattogram
+
+Status
+● Active
+
+Button:
+
+[Membership Card]
+
+--------------------------------------------------
+RECENT NOTICES
+--------------------------------------------------
+
+Create a list/card layout.
+
+Title:
+
+"সর্বশেষ নোটিশ"
+
+Example notices:
+
+কেন্দ্রীয় কমিটির সভা সংক্রান্ত বিজ্ঞপ্তি
+10 September 2026
+
+বার্ষিক সাধারণ সভা সংক্রান্ত নোটিশ
+05 September 2026
+
+সদস্যপদ নবায়ন সংক্রান্ত বিজ্ঞপ্তি
+28 August 2026
+
+Each notice:
+
+PDF icon
+Title
+Date
+[দেখুন]
+
+Button:
+
+[সকল নোটিশ]
+
+--------------------------------------------------
+UPCOMING EVENTS
+--------------------------------------------------
+
+Create event cards.
+
+Example:
+
+25
+September
+2026
+
+কেন্দ্রীয় কমিটির সভা
+
+সময়:
+10:00 AM
+
+স্থান:
+ঢাকা
+
+[বিস্তারিত দেখুন]
+
+Create 2–3 sample events.
+
+--------------------------------------------------
+RECENT ACTIVITIES
+--------------------------------------------------
+
+Create a vertical timeline.
+
+Example:
+
+10 September 2026
+কেন্দ্রীয় কমিটির সভায় অংশগ্রহণ
+
+20 August 2026
+শিক্ষক প্রশিক্ষণ কর্মসূচি
+
+15 July 2026
+সদস্যপদ নবায়ন
+
+Use icons and timeline indicators.
+
+==================================================
+PAGE 2: MEMBER PROFILE
+==================================================
+
+Create:
+
+dashboard/profile.html
+
+Design a premium professional profile page.
+
+Header:
+
+Large profile cover area
+
+Profile photo overlapping the cover.
+
+Show:
+
+মোঃ জাহানুর ইসলাম
+Instructor
+Computer Technology
+Cumilla Polytechnic Institute
+
+● Active Member
+
+Membership ID:
+BPTA-10245
+
+Buttons:
+
+[প্রোফাইল সম্পাদনা]
+[Membership Card]
+
+==================================================
+PROFILE TABS
+==================================================
+
+Create Bootstrap tabs:
+
+Overview
+Professional
+Education
+Training
+Membership
+Activities
+Documents
+
+==================================================
+OVERVIEW TAB
+==================================================
+
+Personal Information card:
+
+পূর্ণ নাম
+পিতার নাম
+মাতার নাম
+জন্মতারিখ
+লিঙ্গ
+রক্তের গ্রুপ
+
+Contact:
+
+Email
+Mobile
+District
+Division
+
+Do not use real sensitive information.
+
+Use masked/sample values.
+
+==================================================
+PROFESSIONAL TAB
+==================================================
+
+Show:
+
+Designation
+Technology
+Institute
+Institute Code
+Joining Date
+Current Posting
+Grade
+Service Status
+
+Use clean two-column information layout.
+
+==================================================
+EDUCATION TAB
+==================================================
+
+Create an education timeline.
+
+Example:
+
+B.Sc. in Computer Science & Engineering
+University of Scholars
+2022
+
+Diploma in Computer Engineering
+XYZ Polytechnic Institute
+2018
+
+SSC
+XYZ School
+2014
+
+==================================================
+TRAINING TAB
+==================================================
+
+Create certificate cards.
+
+Each card:
+
+Certificate icon
+Training title
+Organization
+Duration
+Completion date
+
+Button:
+
+[View Certificate]
+
+==================================================
+MEMBERSHIP TAB
+==================================================
+
+Create a premium membership card.
+
+Include:
+
+Organization Logo
+Organization Name
+Member Photo
+Member Name
+Designation
+Institute
+Membership ID
+Valid Until
+QR Code placeholder
+
+Buttons:
+
+[Download]
+[Print]
+
+==================================================
+ACTIVITIES TAB
+==================================================
+
+Create timeline:
+
+Date
+Activity title
+Description
+
+==================================================
+DOCUMENTS TAB
+==================================================
+
+Create document cards/table.
+
+Columns:
+
+Document
+Category
+Date
+Type
+Action
+
+Actions:
+
+View
+Download
+
+==================================================
+PAGE 3: DIGITAL MEMBERSHIP CARD
+==================================================
+
+Create:
+
+membership-card.html
+
+Design a realistic professional ID card.
+
+Size should resemble a real ID card.
+
+Front:
+
+Organization Logo
+
+বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি
+
+Bangladesh Polytechnic Teachers Association
+
+Profile Photo
+
+মোঃ জাহানুর ইসলাম
+
+Instructor
+Computer Technology
+
+Institute:
+Cumilla Polytechnic Institute
+
+Member ID:
+BPTA-10245
+
+Status:
+ACTIVE
+
+Back:
+
+Organization contact information
+
+Membership validity
+
+QR Code placeholder
+
+"Scan to verify membership"
+
+Buttons outside card:
+
+[Print Card]
+[Download Card]
+
+==================================================
+PAGE 4: MEMBER VERIFICATION
+==================================================
+
+Create:
+
+verify-member.html
+
+Design:
+
+"Membership Verification"
+
+Large success icon
+
+✓ Verified Member
+
+Photo
+
+মোঃ জাহানুর ইসলাম
+
+Membership ID:
+BPTA-10245
+
+Designation:
+Instructor
+
+Technology:
+Computer Technology
+
+Institute:
+Cumilla Polytechnic Institute
+
+Membership Status:
+Active
+
+Verification Date:
+17 September 2026
+
+Create a professional verification interface.
+
+==================================================
+JAVASCRIPT
+==================================================
+
+Use vanilla JavaScript only.
+
+Implement:
+
+1. Sidebar collapse
+2. Mobile sidebar/offcanvas
+3. Notification dropdown
+4. User dropdown
+5. Profile tabs
+6. Dark mode toggle
+7. Search UI interaction
+8. Print membership card
+9. Simple modal interactions
+10. Active navigation state
+
+
+==================================================
+IMPORTANT UI REQUIREMENTS
+==================================================
+
+Make the UI look like a real production website,
+not a basic HTML demo.
+
+Use:
+
+- Consistent spacing
+- Professional typography
+- Responsive cards
+- Proper visual hierarchy
+- Accessible buttons
+- Bootstrap Icons
+- Hover states
+- Active states
+- Empty states where appropriate
+- Loading-friendly structure
+
+Use realistic Bangladeshi sample data.
+
+Do not use Lorem Ipsum.
+
+All text should be relevant to:
+
+"বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি"

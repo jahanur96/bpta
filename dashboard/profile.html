@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার প্রোফাইল | BPTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebarMenu">
+            <div class="brand-box">
+                <img src="../images/logo.jfif" alt="BPTA logo">
+                <div>
+                    <h5>বাপশিস</h5>
+                    <small>BPTA</small>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html"><i class="bi bi-grid-1x2-fill"></i> ড্যাশবোর্ড</a>
+                <a href="profile.html" class="active"><i class="bi bi-person-badge-fill"></i> আমার প্রোফাইল</a>
+                <a href="membership-card.html"><i class="bi bi-credit-card-2-front-fill"></i> সদস্য কার্ড</a>
+                <a href="verify-member.html"><i class="bi bi-patch-check-fill"></i> সদস্য যাচাই</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../login.html" class="nav-menu" style="display:grid;">
+                    <span style="display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.88); padding:0.8rem 0.9rem; border-radius:0.9rem;">
+                        <i class="bi bi-box-arrow-right"></i> লগআউট
+                    </span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <header class="topbar" style="margin-bottom:1.5rem;">
+                <div class="title-area">
+                    <button class="icon-button d-lg-none" id="mobileToggle" type="button" aria-label="Sidebar">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h1>আমার প্রোফাইল</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="icon-button" type="button" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="icon-button" type="button" aria-label="Notification">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge-dot">3</span>
+                    </button>
+                    <button class="user-button" type="button" aria-label="User menu">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="User profile">
+                        <span>মোঃ জাহানুর ইসলাম</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="profile-shell">
+                <div class="profile-cover"></div>
+                <div class="profile-card">
+                    <div class="profile-top">
+                        <div class="profile-name">
+                            <h2>মোঃ জাহানুর ইসলাম</h2>
+                            <div class="profile-role">
+                                <span>Instructor</span>
+                                <span>•</span>
+                                <span>কম্পিউটার টেকনোলজি</span>
+                                <span>•</span>
+                                <span>কুমিল্লা পলিটেকনিক ইনস্টিটিউট</span>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-primary-bpta" type="button">প্রোফাইল সম্পাদনা</button>
+                            <button class="btn-outline-bpta" type="button">কার্ড দেখুন</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-avatar-wrap">
+                        <img class="profile-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Profile avatar">
+                    </div>
+
+                    <div class="meta-row">
+                        <div class="meta-box">
+                            <span>সদস্য নং</span>
+                            <strong>BPTA-10245</strong>
+                        </div>
+                        <div class="meta-box">
+                            <span>সদস্য ধরন</span>
+                            <strong>ফুল মেম্বার</strong>
+                        </div>
+                        <div class="meta-box">
+                            <span>অবস্থা</span>
+                            <strong class="status-pill"><i class="bi bi-check-circle-fill"></i> Active</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-box">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview" type="button">ওভারভিউ</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#professional" type="button">পেশাগত</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#education" type="button">শিক্ষাগত</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#training" type="button">প্রশিক্ষণ</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents" type="button">ডকুমেন্ট</button></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="overview">
+                            <div class="panel-card-profile">
+                                <h3>ব্যক্তিগত তথ্য</h3>
+                                <div class="info-card-grid">
+                                    <div class="info-box"><span>পূর্ণ নাম</span><strong>মোঃ জাহানুর ইসলাম</strong></div>
+                                    <div class="info-box"><span>পিতার নাম</span><strong>মোঃ রফিকুল ইসলাম</strong></div>
+                                    <div class="info-box"><span>মাতার নাম</span><strong>জাহানারা বেগম</strong></div>
+                                    <div class="info-box"><span>জন্ম তারিখ</span><strong>১২ অক্টোবর ১৯৯২</strong></div>
+                                    <div class="info-box"><span>মোবাইল</span><strong>+৮৮০ ১৭১১-XXXXXX</strong></div>
+                                    <div class="info-box"><span>ইমেইল</span><strong>jahanur.cpi@gmail.com</strong></div>
+                                    <div class="info-box"><span>জেলা</span><strong>কুমিল্লা</strong></div>
+                                    <div class="info-box"><span>বিভাগ</span><strong>চট্টগ্রাম</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="professional">
+                            <div class="panel-card-profile">
+                                <h3>কর্মস্থল ও পেশাগত অবস্থা</h3>
+                                <div class="info-card-grid">
+                                    <div class="info-box"><span>বর্তমান পদবি</span><strong>ইনস্ট্রাক্টর</strong></div>
+                                    <div class="info-box"><span>বিষয়</span><strong>কম্পিউটার টেকনোলজি</strong></div>
+                                    <div class="info-box"><span>প্রতিষ্ঠান</span><strong>কুমিল্লা পলিটেকনিক ইনস্টিটিউট</strong></div>
+                                    <div class="info-box"><span>অভিজ্ঞতা</span><strong>১২ বছর</strong></div>
+                                    <div class="info-box"><span>কর্মস্থল</span><strong>চট্টগ্রাম বিভাগ</strong></div>
+                                    <div class="info-box"><span>পে-স্কেল</span><strong>১০ম গ্রেড</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="education">
+                            <div class="panel-card-profile">
+                                <h3>শিক্ষাগত যোগ্যতা</h3>
+                                <ul class="profile-timeline">
+                                    <li>
+                                        <h4>B.Sc. in Computer Science & Engineering</h4>
+                                        <p>ইউনিভার্সিটি অফ স্কলার্স, ২০২২</p>
+                                    </li>
+                                    <li>
+                                        <h4>Diploma in Computer Engineering</h4>
+                                        <p>ঢাকা পলিটেকনিক ইনস্টিটিউট, ২০১৮</p>
+                                    </li>
+                                    <li>
+                                        <h4>S.S.C (বিজ্ঞান)</h4>
+                                        <p>কুমিল্লা জিলা স্কুল, ২০১৪</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="training">
+                            <div class="panel-card-profile">
+                                <h3>প্রশিক্ষণ ও সার্টিফিকেট</h3>
+                                <div class="info-card-grid">
+                                    <div class="info-box"><span>প্রশিক্ষণ</span><strong>Advanced Pedagogy & Technology</strong></div>
+                                    <div class="info-box"><span>সার্টিফিকেট</span><strong>CCNA</strong></div>
+                                    <div class="info-box"><span>বছর</span><strong>২০২৪</strong></div>
+                                    <div class="info-box"><span>অবস্থা</span><strong>সম্পন্ন</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="documents">
+                            <div class="panel-card-profile">
+                                <h3>ডকুমেন্টস</h3>
+                                <table class="document-table">
+                                    <thead>
+                                        <tr>
+                                            <th>নাম</th>
+                                            <th>ধরণ</th>
+                                            <th>তারিখ</th>
+                                            <th>অ্যাকশন</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>সদস্যপদ আবেদন ফরম</td>
+                                            <td>PDF</td>
+                                            <td>১০ জানু ২০২৬</td>
+                                            <td><a href="#" style="color:var(--bpta-primary); font-weight:700;">ডাউনলোড</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>জাতীয় পরিচয়পত্র</td>
+                                            <td>JPG</td>
+                                            <td>১৫ জানু ২০২৬</td>
+                                            <td><a href="#" style="color:var(--bpta-primary); font-weight:700;">ডাউনলোড</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

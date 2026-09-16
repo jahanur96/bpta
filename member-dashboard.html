@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="bn" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি - সদস্য পোর্টাল</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bpta-primary: #006A4E;
+            --bpta-primary-dark: #004d39;
+            --bpta-secondary: #f4f6f8;
+            --bpta-accent: #D6252E;
+            --bpta-gold: #FFC107;
+            --sidebar-width: 280px;
+        }
+
+        [data-bs-theme="dark"] {
+            --bpta-primary: #058c67;
+            --bpta-secondary: #1e293b;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+            min-height: 100vh;
+        }
+
+        /* Layout Structure */
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            min-width: var(--sidebar-width);
+            max-width: var(--sidebar-width);
+            background: var(--bpta-primary);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.75rem 1.25rem;
+            margin: 0.2rem 0.8rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        #sidebar .nav-link:hover, 
+        #sidebar .nav-link.active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.18);
+            transform: translateX(4px);
+        }
+
+        #sidebar .sidebar-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #main-content {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Top Navbar */
+        .top-navbar {
+            background-color: var(--bs-body-bg);
+            border-bottom: 1px solid var(--bs-border-color);
+            padding: 0.75rem 1.5rem;
+        }
+
+        /* Cards & Components */
+        .card-custom {
+            border: 1px solid var(--bs-border-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-custom:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .profile-hero {
+            background: linear-gradient(135deg, var(--bpta-primary) 0%, var(--bpta-primary-dark) 100%);
+            height: 160px;
+            border-radius: 0.75rem 0.75rem 0 0;
+            position: relative;
+        }
+
+        .profile-avatar-container {
+            position: relative;
+            margin-top: -60px;
+            margin-bottom: 1rem;
+        }
+
+        .profile-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid var(--bs-body-bg);
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-active {
+            background-color: #10b981;
+            color: #fff;
+        }
+
+        /* Dynamic View Container */
+        .view-page {
+            display: none;
+        }
+        .view-page.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Timeline Components */
+        .timeline-vertical {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--bs-border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-badge {
+            position: absolute;
+            left: -2.55rem;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--bpta-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Digital ID Card Styling & Flip Animation */
+        .id-card-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin: 0 auto;
+        }
+
+        .id-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+        }
+
+        .id-card-wrapper.flipped .id-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .id-card-front, .id-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            color: #333;
+            border: 2px solid #006A4E;
+        }
+
+        .id-card-back {
+            transform: rotateY(180deg);
+            background: #fdfdfd;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-id-card, #printable-id-card * {
+                visibility: visible;
+            }
+            #printable-id-card {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            #sidebar {
+                margin-left: calc(-1 * var(--sidebar-width));
+            }
+            #sidebar.show {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <!-- SIDEBAR -->
+    <nav id="sidebar" class="d-flex flex-column justify-content-between">
+        <div>
+            <div class="sidebar-header d-flex align-items-center gap-3">
+                <div class="bg-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="bi bi-mortarboard-fill text-success fs-4"></i>
+                </div>
+                <div>
+                    <h6 class="mb-0 fw-bold lh-sm text-white">বাংলাদেশ পলিটেকনিক</h6>
+                    <small class="text-white-50" style="font-size: 0.75rem;">শিক্ষক সমিতি (BPTA)</small>
+                </div>
+            </div>
+
+            <div class="px-3 py-3">
+                <small class="text-white-50 text-uppercase fw-bold px-2" style="font-size: 0.7rem;">প্রধান মেনু</small>
+            </div>
+
+            <ul class="nav flex-column id-nav-list">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="switchView('dashboard', this)">
+                        <i class="bi bi-grid-1x2-fill"></i> ড্যাশবোর্ড
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchView('profile', this)">
+                        <i class="bi bi-person-badge-fill"></i> আমার প্রোফাইল
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchView('membership', this)">
+                        <i class="bi bi-card-heading"></i> সদস্য কার্ড
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchView('verify', this)">
+                        <i class="bi bi-patch-check-fill"></i> সদস্য যাচাই
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showNoticeModal()">
+                        <i class="bi bi-bell-fill"></i> নোটিশ ও বিজ্ঞপ্তি
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchView('profile', this); enableTab('documents-tab')">
+                        <i class="bi bi-file-earmark-pdf-fill"></i> ডকুমেন্ট ও ফাইল
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="p-3 border-top border-white-10">
+            <a class="nav-link text-white-50 d-flex align-items-center gap-2" href="#" onclick="alert('সফলভাবে লগআউট করা হয়েছে।')">
+                <i class="bi bi-box-arrow-right fs-5"></i> লগআউট
+            </a>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <!-- TOP NAVBAR -->
+        <header class="top-navbar d-flex justify-content-between align-items-center sticky-top no-print">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-outline-secondary d-lg-none" type="button" onclick="toggleSidebar()">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+                <h5 class="mb-0 fw-bold d-none d-sm-block" id="page-header-title">সদস্য ড্যাশবোর্ড</h5>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <!-- Search UI -->
+                <div class="input-group d-none d-md-flex" style="width: 240px;">
+                    <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control border-start-0" placeholder="অনুসন্ধান করুন...">
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button class="btn btn-light rounded-circle" id="themeToggleBtn" onclick="toggleTheme()" title="থিম পরিবর্তন করুন">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                </button>
+
+                <!-- Notification Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-circle position-relative" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">
+                            ৩
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="width: 300px;">
+                        <li class="dropdown-header fw-bold border-bottom">বিজ্ঞপ্তি সমুহ</li>
+                        <li>
+                            <a class="dropdown-item py-2" href="#">
+                                <div class="fw-semibold text-truncate" style="font-size: 0.85rem;">কেন্দ্রীয় কমিটির সভা সংক্রান্ত</div>
+                                <small class="text-muted">১০ সেপ্টেম্বর ২০২৬</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="#">
+                                <div class="fw-semibold text-truncate" style="font-size: 0.85rem;">বার্ষিক সাধারণ সভা ২০২৬</div>
+                                <small class="text-muted">০৫ সেপ্টেম্বর ২০২৬</small>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-center text-success fw-bold" href="#">সব নোটিশ দেখুন</a></li>
+                    </ul>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center gap-2 text-decoration-none dropdown-toggle text-body" data-bs-toggle="dropdown">
+                        <img src="https://placehold.co/100x100/006A4E/FFFFFF?text=Jahanur" alt="সদস্য" class="rounded-circle" width="38" height="38">
+                        <div class="d-none d-xl-block text-start" style="line-height: 1.2;">
+                            <span class="fw-bold d-block" style="font-size: 0.9rem;">মোঃ জাহানুর ইসলাম</span>
+                            <small class="text-muted" style="font-size: 0.75rem;">ইনস্ট্রাক্টর (কম্পিউটার)</small>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                        <li><a class="dropdown-item" href="#" onclick="switchView('profile', null)"><i class="bi bi-person me-2"></i>আমার প্রোফাইল</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="switchView('membership', null)"><i class="bi bi-card-heading me-2"></i>ডিজিটাল আইডি</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>লগআউট</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow-1 p-3 p-md-4">
+            
+            <div id="dashboard-view" class="view-page active">
+                <!-- Welcome Banner -->
+                <div class="card card-custom border-0 bg-success bg-opacity-10 mb-4">
+                    <div class="card-body p-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h4 class="fw-bold mb-1 text-success">স্বাগতম, মোঃ জাহানুর ইসলাম!</h4>
+                            <p class="text-secondary mb-0">বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির সদস্য পোর্টালে আপনাকে স্বাগতম।</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge badge-active px-3 py-2 rounded-pill"><i class="bi bi-check-circle-fill me-1"></i> সক্রিয় সদস্য (Active)</span>
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"><i class="bi bi-calendar3 me-1"></i> ১৭ সেপ্টেম্বর ২০২৬</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Summary Card -->
+                <div class="card card-custom mb-4">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-auto text-center">
+                                <img src="https://placehold.co/120x120/006A4E/FFFFFF?text=Jahanur" alt="Profile" class="rounded-circle img-thumbnail" width="110">
+                            </div>
+                            <div class="col-md">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <h4 class="mb-0 fw-bold">মোঃ জাহানুর ইসলাম</h4>
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle">BPTA-10245</span>
+                                </div>
+                                <p class="text-secondary mb-2">ইনস্ট্রাক্টর (কম্পিউটার টেকনোলজি) — কুমিল্লা পলিটেকনিক ইনস্টিটিউট</p>
+                                <div class="d-flex flex-wrap gap-3 text-muted" style="font-size: 0.9rem;">
+                                    <span><i class="bi bi-geo-alt-fill text-danger me-1"></i>কুমিল্লা, চট্টগ্রাম বিভাগ</span>
+                                    <span><i class="bi bi-envelope-fill text-primary me-1"></i>jahanur.cpi@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="col-md-auto d-flex flex-column gap-2">
+                                <button class="btn btn-success" onclick="switchView('profile', null)"><i class="bi bi-person-fill me-1"></i> প্রোফাইল দেখুন</button>
+                                <button class="btn btn-outline-secondary" onclick="switchView('profile', null); enableTab('overview-tab')"><i class="bi bi-pencil-square me-1"></i> সম্পাদনা করুন</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="card card-custom h-100">
+                            <div class="card-body d-flex align-items-center gap-3">
+                                <div class="p-3 bg-success bg-opacity-10 text-success rounded-3 fs-3">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-muted mb-0">সদস্যপদ স্ট্যাটাস</h6>
+                                    <h4 class="fw-bold mb-0">Active</h4>
+                                    <small class="text-success">মেয়াদ: ৩১ ডিসেম্বর ২০২৬</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="card card-custom h-100">
+                            <div class="card-body d-flex align-items-center gap-3">
+                                <div class="p-3 bg-primary bg-opacity-10 text-primary rounded-3 fs-3">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-muted mb-0">সংগৃহীত ডকুমেন্ট</h6>
+                                    <h4 class="fw-bold mb-0">১২টি</h4>
+                                    <small class="text-muted">সর্বশেষ আপলোড: ৩ দিন আগে</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="card card-custom h-100">
+                            <div class="card-body d-flex align-items-center gap-3">
+                                <div class="p-3 bg-warning bg-opacity-10 text-warning rounded-3 fs-3">
+                                    <i class="bi bi-award"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-muted mb-0">সম্পন্ন প্রশিক্ষণ</h6>
+                                    <h4 class="fw-bold mb-0">৫টি</h4>
+                                    <small class="text-muted">সার্টিফিকেট যাচাইকৃত</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="card card-custom h-100">
+                            <div class="card-body d-flex align-items-center gap-3">
+                                <div class="p-3 bg-info bg-opacity-10 text-info rounded-3 fs-3">
+                                    <i class="bi bi-calendar-event"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-muted mb-0">অংশগ্রহণকৃত কার্যক্রম</h6>
+                                    <h4 class="fw-bold mb-0">৮টি</h4>
+                                    <small class="text-muted">কেন্দ্রীয় ও আঞ্চলিক</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Completion Bar -->
+                <div class="card card-custom mb-4 bg-light">
+                    <div class="card-body p-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-3">
+                                <div class="fw-bold">আপনার প্রোফাইল ৮৫% সম্পূর্ণ</div>
+                                <small class="text-muted">তথ্য হালনাগাদ করা জরুরি</small>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="progress" style="height: 12px;">
+                                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%;">85%</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-md-end">
+                                <button class="btn btn-sm btn-success" onclick="switchView('profile', null)">তথ্য সম্পূর্ণ করুন <i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Cards Row -->
+                <div class="row g-4 mb-4">
+                    <!-- Professional Info Card -->
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <h6 class="fw-bold mb-0 text-success"><i class="bi bi-briefcase me-2"></i>পেশাগত তথ্য</h6>
+                                <button class="btn btn-sm btn-outline-success" onclick="switchView('profile', null); enableTab('professional-tab')"><i class="bi bi-pencil"></i> সম্পাদনা</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">পদবি</small>
+                                        <span class="fw-semibold">ইনস্ট্রাক্টর (Instructor)</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">টেকনোলজি</small>
+                                        <span class="fw-semibold">Computer Technology</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">বর্তমান প্রতিষ্ঠান</small>
+                                        <span class="fw-semibold">কুমিল্লা পলিটেকনিক ইনস্টিটিউট</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">ইনস্টিটিউট কোড</small>
+                                        <span class="fw-semibold">১৩১১৯</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">যোগদানের তারিখ</small>
+                                        <span class="fw-semibold">১৫ ফেব্রুয়ারি ২০২৪</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">বেতন গ্রেড</small>
+                                        <span class="fw-semibold">১০ম গ্রেড</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membership Info Card -->
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <h6 class="fw-bold mb-0 text-success"><i class="bi bi-card-text me-2"></i>সদস্যপদ তথ্য</h6>
+                                <button class="btn btn-sm btn-success" onclick="switchView('membership', null)"><i class="bi bi-qr-code me-1"></i> ID Card</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">সদস্য আইডি</small>
+                                        <span class="fw-bold text-success">BPTA-10245</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">সদস্যপদের ধরন</small>
+                                        <span class="fw-semibold">সাধারণ সদস্য (General Member)</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">নিবন্ধনের তারিখ</small>
+                                        <span class="fw-semibold">১০ জানুয়ারি ২০২৬</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">জেলা ইউনিট</small>
+                                        <span class="fw-semibold">কুমিল্লা জেলা সমিতি</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">বিভাগ</small>
+                                        <span class="fw-semibold">চট্টগ্রাম বিভাগ</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">স্ট্যাটাস</small>
+                                        <span class="badge bg-success">সক্রিয়</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notices, Events & Timeline Grid -->
+                <div class="row g-4 mb-4">
+                    <!-- Recent Notices -->
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <h6 class="fw-bold mb-0 text-success"><i class="bi bi-bell-fill me-2"></i>সর্বশেষ নোটিশ</h6>
+                                <button class="btn btn-sm btn-link text-success p-0 fw-bold text-decoration-none" onclick="showNoticeModal()">সকল নোটিশ</button>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item p-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="text-danger fs-3"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                                            <div>
+                                                <h6 class="mb-1 fw-bold">কেন্দ্রীয় কমিটির সভা সংক্রান্ত বিজ্ঞপ্তি</h6>
+                                                <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>১০ সেপ্টেম্বর ২০২৬</small>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="alert('ডকুমেন্ট প্রাকদর্শন ডাউনলোড হচ্ছে...')">দেখুন</button>
+                                    </div>
+                                    <div class="list-group-item p-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="text-danger fs-3"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                                            <div>
+                                                <h6 class="mb-1 fw-bold">বার্ষিক সাধারণ সভা সংক্রান্ত নোটিশ</h6>
+                                                <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>০৫ সেপ্টেম্বর ২০২৬</small>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="alert('ডকুমেন্ট প্রাকদর্শন ডাউনলোড হচ্ছে...')">দেখুন</button>
+                                    </div>
+                                    <div class="list-group-item p-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="text-danger fs-3"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                                            <div>
+                                                <h6 class="mb-1 fw-bold">সদস্যপদ নবায়ন সংক্রান্ত বিজ্ঞপ্তি</h6>
+                                                <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>২৮ আগস্ট ২০২৬</small>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="alert('ডকুমেন্ট প্রাকদর্শন ডাউনলোড হচ্ছে...')">দেখুন</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events & Timeline -->
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header bg-transparent py-3">
+                                <h6 class="fw-bold mb-0 text-success"><i class="bi bi-calendar-check me-2"></i>আসন্ন ইভেন্ট ও কার্যক্রম</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center gap-3 border p-3 rounded-3 mb-3 bg-light-subtle">
+                                    <div class="text-center bg-success text-white p-2 rounded-3" style="min-width: 65px;">
+                                        <span class="d-block fw-bold fs-4 lh-1">২৫</span>
+                                        <small class="text-uppercase" style="font-size: 0.65rem;">সেপ্টেম্বর</small>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-bold mb-1">কেন্দ্রীয় নির্বাহী কমিটির মতবিনিময় সভা</h6>
+                                        <small class="text-muted d-block"><i class="bi bi-clock me-1"></i> সকাল ১০:০০ টা | <i class="bi bi-geo-alt me-1"></i> ঢাকা ইনস্টিটিউট অফ গ্লাস</small>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-success" onclick="alert('ইভেন্ট বিস্তারিত সংরক্ষিত হয়েছে।')">বিস্তারিত</button>
+                                </div>
+
+                                <h6 class="fw-bold mt-4 mb-3 text-secondary" style="font-size: 0.85rem;">সর্বশেষ টাইমলাইন 활동:</h6>
+                                <div class="timeline-vertical ms-2">
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-check"></i></div>
+                                        <h6 class="mb-0 fw-bold" style="font-size: 0.9rem;">কেন্দ্রীয় কমিটির সভায় অংশগ্রহণ</h6>
+                                        <small class="text-muted">১০ সেপ্টেম্বর ২০২৬</small>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-check"></i></div>
+                                        <h6 class="mb-0 fw-bold" style="font-size: 0.9rem;">শিক্ষক দক্ষতা উন্নয়ন প্রশিক্ষণ</h6>
+                                        <small class="text-muted">২০ আগস্ট ২০২৬</small>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-check"></i></div>
+                                        <h6 class="mb-0 fw-bold" style="font-size: 0.9rem;">বার্ষিক সদস্যপদ নবায়ন সম্পন্ন</h6>
+                                        <small class="text-muted">১৫ জুলাই ২০২৬</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="profile-view" class="view-page">
+                <div class="card card-custom mb-4 overflow-hidden">
+                    <div class="profile-hero"></div>
+                    <div class="card-body px-4 pb-4 pt-0">
+                        <div class="row align-items-end mb-3">
+                            <div class="col-auto">
+                                <div class="profile-avatar-container">
+                                    <img src="https://placehold.co/130x130/006A4E/FFFFFF?text=Jahanur" alt="Profile Cover" class="profile-avatar">
+                                </div>
+                            </div>
+                            <div class="col md-mb-0 mb-3">
+                                <h3 class="fw-bold mb-1">মোঃ জাহানুর ইসলাম</h3>
+                                <p class="text-secondary mb-1">ইনস্ট্রাক্টর (কম্পিউটার টেকনোলজি) | কুমিল্লা পলিটেকনিক ইনস্টিটিউট</p>
+                                <span class="badge bg-success-subtle text-success border me-2">সদস্য আইডি: BPTA-10245</span>
+                                <span class="badge badge-active">সক্রিয় সদস্য</span>
+                            </div>
+                            <div class="col-md-auto d-flex gap-2">
+                                <button class="btn btn-success" onclick="switchView('membership', null)"><i class="bi bi-card-heading me-1"></i> ID Card</button>
+                                <button class="btn btn-outline-secondary"><i class="bi bi-printer me-1"></i> প্রিন্ট</button>
+                            </div>
+                        </div>
+
+                        <!-- Profile Navigation Tabs -->
+                        <ul class="nav nav-tabs nav-fill" id="profileTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active fw-semibold" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button">সামগ্রিক চিত্র</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link fw-semibold" id="professional-tab" data-bs-toggle="tab" data-bs-target="#professional-tab-pane" type="button">পেশাগত তথ্য</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link fw-semibold" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button">শিক্ষাগত যোগ্যতা</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link fw-semibold" id="training-tab" data-bs-toggle="tab" data-bs-target="#training-tab-pane" type="button">প্রশিক্ষণ ও সনদ</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link fw-semibold" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents-tab-pane" type="button">ডকুমেন্টস</button>
+                            </li>
+                        </ul>
+
+                        <!-- Profile Tab Contents -->
+                        <div class="tab-content pt-4" id="profileTabContent">
+                            <!-- Overview Tab -->
+                            <div class="tab-pane fade show active" id="overview-tab-pane">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <h6 class="fw-bold text-success border-bottom pb-2 mb-3">ব্যক্তিগত তথ্য</h6>
+                                        <div class="row g-3">
+                                            <div class="col-6"><small class="text-muted d-block">পূর্ণ নাম</small><strong>মোঃ জাহানুর ইসলাম</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">পিতার নাম</small><strong>মোঃ রফিকুল ইসলাম</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">মাতার নাম</small><strong>জাহানারা বেগম</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">জন্ম তারিখ</small><strong>১২ অক্টোবর ১৯৯২</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">রক্তের গ্রুপ</small><strong class="text-danger">B+ (Positive)</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">জাতীয়তা</small><strong>বাংলাদেশী</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="fw-bold text-success border-bottom pb-2 mb-3">যোগাযোগের ঠিকানা</h6>
+                                        <div class="row g-3">
+                                            <div class="col-6"><small class="text-muted d-block">ইমেইল</small><strong>jahanur.cpi@gmail.com</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">মোবাইল নম্বর</small><strong>+880 1711-XXXXXX</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">জেলা</small><strong>কুমিল্লা</strong></div>
+                                            <div class="col-6"><small class="text-muted d-block">বিভাগ</small><strong>চট্টগ্রাম</strong></div>
+                                            <div class="col-12"><small class="text-muted d-block">বর্তমান ঠিকানা</small><strong>কোটবাড়ি, কুমিল্লা পলিটেকনিক ক্যাম্পাস</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Professional Tab -->
+                            <div class="tab-pane fade" id="professional-tab-pane">
+                                <h6 class="fw-bold text-success border-bottom pb-2 mb-3">কর্মস্থলের বিবরণ</h6>
+                                <div class="row g-3">
+                                    <div class="col-md-4"><small class="text-muted d-block">বর্তমান পদবি</small><strong>ইনস্ট্রাক্টর</strong></div>
+                                    <div class="col-md-4"><small class="text-muted d-block">টেকনোলজি/বিভাগ</small><strong>কম্পিউটার টেকনোলজি</strong></div>
+                                    <div class="col-md-4"><small class="text-muted d-block">প্রতিষ্ঠানের নাম</small><strong>কুমিল্লা পলিটেকনিক ইনস্টিটিউট</strong></div>
+                                    <div class="col-md-4"><small class="text-muted d-block">প্রথম সরকারি চাকরিতে যোগদান</small><strong>১৫ ফেব্রুয়ারি ২০১৪</strong></div>
+                                    <div class="col-md-4"><small class="text-muted d-block">বর্তমান পদে যোগদান</small><strong>১০ জানুয়ারি ২০২০</strong></div>
+                                    <div class="col-md-4"><small class="text-muted d-block">পে-স্কেল ও গ্রেড</small><strong>১০ম গ্রেড</strong></div>
+                                </div>
+                            </div>
+
+                            <!-- Education Tab Timeline -->
+                            <div class="tab-pane fade" id="education-tab-pane">
+                                <h6 class="fw-bold text-success border-bottom pb-2 mb-3">শিক্ষাগত যোগ্যতা</h6>
+                                <div class="timeline-vertical ms-2 mt-3">
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-mortarboard"></i></div>
+                                        <h6 class="mb-0 fw-bold">B.Sc. in Computer Science & Engineering</h6>
+                                        <small class="text-muted">ইউনিভার্সিটি অফ স্কলার্স | বর্ষ: ২০২২ | সিজিপিএ: ৩.৬৫</small>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-mortarboard"></i></div>
+                                        <h6 class="mb-0 fw-bold">Diploma in Computer Engineering</h6>
+                                        <small class="text-muted">ঢাকা পলিটেকনিক ইনস্টিটিউট | বর্ষ: ২০১৮ | জিপিএ: ৩.৮৫</small>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge"><i class="bi bi-mortarboard"></i></div>
+                                        <h6 class="mb-0 fw-bold">S.S.C (বিজ্ঞান বিভাগ)</h6>
+                                        <small class="text-muted">কুমিল্লা জিলা স্কুল | বর্ষ: ২০১৪ | জিপিএ: ৫.০০</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Training Tab -->
+                            <div class="tab-pane fade" id="training-tab-pane">
+                                <h6 class="fw-bold text-success border-bottom pb-2 mb-3">প্রশিক্ষণ ও সার্টিফিকেট</h6>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="card card-custom p-3 d-flex flex-row align-items-center gap-3">
+                                            <div class="p-3 bg-success bg-opacity-10 text-success rounded-3 fs-2"><i class="bi bi-award-fill"></i></div>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Advanced Pedagogy & Technology Training</h6>
+                                                <small class="text-muted d-block">NITTTR, Bhopal, India (6 Months)</small>
+                                                <span class="badge bg-light text-dark border mt-2">সম্পন্ন: ২০২৪</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card card-custom p-3 d-flex flex-row align-items-center gap-3">
+                                            <div class="p-3 bg-primary bg-opacity-10 text-primary rounded-3 fs-2"><i class="bi bi-award-fill"></i></div>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Cisco Certified Network Associate (CCNA)</h6>
+                                                <small class="text-muted d-block">DTE-A2I Initiative Program</small>
+                                                <span class="badge bg-light text-dark border mt-2">সম্পন্ন: ২০২৩</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Documents Tab Table -->
+                            <div class="tab-pane fade" id="documents-tab-pane">
+                                <h6 class="fw-bold text-success border-bottom pb-2 mb-3">সংগৃহীত ফাইলপত্র</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>ডকুমেন্টের নাম</th>
+                                                <th>ক্যাটাগরি</th>
+                                                <th>তারিখ</th>
+                                                <th>টাইপ</th>
+                                                <th class="text-end">অ্যাকশন</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="bi bi-file-earmark-pdf text-danger me-2"></i>সদস্যপদ আবেদন ফরম</td>
+                                                <td>মেম্বারশিপ</td>
+                                                <td>১০ জানু ২০২৬</td>
+                                                <td>PDF</td>
+                                                <td class="text-end"><button class="btn btn-sm btn-outline-success" onclick="alert('ডাউনলোড শুরু হচ্ছে...')"><i class="bi bi-download"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-file-earmark-image text-primary me-2"></i>জাতীয় পরিচয়পত্র (NID)</td>
+                                                <td>ব্যক্তিগত</td>
+                                                <td>১৫ জানু ২০২৬</td>
+                                                <td>JPG</td>
+                                                <td class="text-end"><button class="btn btn-sm btn-outline-success" onclick="alert('ডাউনলোড শুরু হচ্ছে...')"><i class="bi bi-download"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="membership-view" class="view-page">
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold text-success">ডিজিটাল সদস্য পরিচিতি কার্ড</h4>
+                    <p class="text-muted">কার্ডটি উল্টাতে ক্লিক করুন অথবা ফ্লিপ বাটনে চাপুন</p>
+                </div>
+
+                <div id="printable-id-card">
+                    <!-- Interactive 3D Flip Card -->
+                    <div class="id-card-wrapper mb-4" id="idCardContainer" onclick="toggleCardFlip()">
+                        <div class="id-card-inner">
+                            <!-- FRONT SIDE -->
+                            <div class="id-card-front p-3 d-flex flex-column justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-mortarboard-fill text-success fs-3"></i>
+                                        <div>
+                                            <div class="fw-bold lh-1" style="font-size: 0.75rem;">বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি</div>
+                                            <small class="text-muted" style="font-size: 0.6rem;">BPTA Official Member Card</small>
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-danger" style="font-size: 0.55rem;">BPTA</span>
+                                </div>
+
+                                <div class="row align-items-center my-auto g-2">
+                                    <div class="col-4 text-center">
+                                        <img src="https://placehold.co/100x100/006A4E/FFFFFF?text=Jahanur" alt="Member" class="rounded border border-2 border-success" width="80" height="80">
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="fw-bold mb-0 text-success" style="font-size: 0.95rem;">মোঃ জাহানুর ইসলাম</h6>
+                                        <div class="text-dark fw-semibold" style="font-size: 0.75rem;">ইনস্ট্রাক্টর (কম্পিউটার)</div>
+                                        <small class="text-muted d-block" style="font-size: 0.7rem;">কুমিল্লা পলিটেকনিক ইনস্টিটিউট</small>
+                                        <div class="mt-2" style="font-size: 0.7rem;">
+                                            <span class="fw-bold">ID:</span> <span class="text-danger font-monospace">BPTA-10245</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center border-top pt-1 bg-light rounded px-2">
+                                    <small class="text-muted" style="font-size: 0.6rem;">স্ট্যাটাস: <strong class="text-success">ACTIVE</strong></small>
+                                    <small class="text-muted" style="font-size: 0.6rem;">মেয়াদ: ৩১ ডিশেম্বর ২০২৬</small>
+                                </div>
+                            </div>
+
+                            <!-- BACK SIDE -->
+                            <div class="id-card-back p-3 d-flex flex-column justify-content-between">
+                                <div class="border-bottom pb-1">
+                                    <small class="fw-bold text-success d-block" style="font-size: 0.75rem;">জরুরি যোগাযোগ ও তথ্য</small>
+                                </div>
+
+                                <div class="row align-items-center g-2 my-auto">
+                                    <div class="col-7" style="font-size: 0.65rem;">
+                                        <p class="mb-1">এই কার্ডটি বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির সম্পত্তি।</p>
+                                        <p class="mb-1"><i class="bi bi-telephone-fill"></i> +880 2-XXXXXXX</p>
+                                        <p class="mb-0"><i class="bi bi-globe"></i> www.bpta.org.bd</p>
+                                    </div>
+                                    <div class="col-5 text-center">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=BPTA-10245-VERIFIED" alt="QR Code" class="img-fluid border p-1 rounded" width="70">
+                                        <small class="d-block text-muted mt-1" style="font-size: 0.55rem;">স্ক্যান করে যাচাই করুন</small>
+                                    </div>
+                                </div>
+
+                                <div class="text-center border-top pt-1">
+                                    <small class="text-muted" style="font-size: 0.6rem;">কেন্দ্রীয় নির্বাহী কমিটি কর্তৃক অনুমোদিত</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ID Card Controls -->
+                <div class="d-flex justify-content-center gap-3 no-print">
+                    <button class="btn btn-outline-success" onclick="toggleCardFlip()"><i class="bi bi-arrow-repeat me-1"></i> কার্ড ফ্লিপ করুন</button>
+                    <button class="btn btn-success" onclick="window.print()"><i class="bi bi-printer me-1"></i> কার্ড প্রিন্ট করুন</button>
+                </div>
+            </div>
+
+            <div id="verify-view" class="view-page">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="card card-custom text-center p-4">
+                            <div class="mb-3">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="bi bi-check-lg fs-1"></i>
+                                </div>
+                            </div>
+                            <h4 class="fw-bold text-success mb-1">✓ Verified Member</h4>
+                            <p class="text-muted mb-4">বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি কর্তৃক তথ্য সত্যায়িত</p>
+
+                            <div class="card bg-light border-0 p-3 mb-4 text-start">
+                                <div class="row align-items-center g-3">
+                                    <div class="col-auto">
+                                        <img src="https://placehold.co/90x90/006A4E/FFFFFF?text=Jahanur" class="rounded-circle border border-2 border-success" width="80" height="80" alt="Verified Member">
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="fw-bold mb-1">মোঃ জাহানুর ইসলাম</h5>
+                                        <div class="badge bg-success mb-2">সদস্য নম্বর: BPTA-10245</div>
+                                        <div class="small text-muted">ইনস্ট্রাক্টর (কম্পিউটার টেকনোলজি)</div>
+                                        <div class="small text-muted">কুমিল্লা পলিটেকনিক ইনস্টিটিউট</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row text-start g-3 mb-4">
+                                <div class="col-6">
+                                    <small class="text-muted d-block">মেম্বারশিপ স্ট্যাটাস</small>
+                                    <strong class="text-success"><i class="bi bi-patch-check-fill me-1"></i>এক্টিভ (Active)</strong>
+                                </div>
+                                <div class="col-6">
+                                    <small class="text-muted d-block">যাচাইকরণের তারিখ</small>
+                                    <strong>১৭ সেপ্টেম্বর ২০২৬</strong>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline-secondary w-100" onclick="switchView('dashboard', null)">ড্যাশবোর্ডে ফিরে যান</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="mt-auto py-3 bg-light border-top text-center no-print">
+            <div class="container">
+                <small class="fw-bold text-success">বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি (BPTA)</small><br>
+                <small class="text-muted">"কারিগরি শিক্ষার উন্নয়ন ও শিক্ষকদের কল্যাণে ঐক্যবদ্ধ প্ল্যাটফর্ম"</small><br>
+                <small class="text-muted" style="font-size: 0.75rem;">Copyright © 2026 BPTA. All Rights Reserved.</small>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!-- Notice Modal -->
+<div class="modal fade" id="noticeModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-content-title fw-bold text-success"><i class="bi bi-bell me-2"></i>সকল নোটিশ ও বিজ্ঞপ্তি</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted">বর্তমানে সাম্প্রতিক ৩টি নোটিশ প্রকাশিত রয়েছে। কেন্দ্রীয় কমিটির পরবর্তী নোটিশ শীঘ্রই প্রকাশ করা হবে।</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Tab and Dynamic Page Switcher
+    function switchView(viewName, element) {
+        // Hide all views
+        const views = document.querySelectorAll('.view-page');
+        views.forEach(v => v.classList.remove('active'));
+
+        // Show target view
+        const targetView = document.getElementById(viewName + '-view');
+        if(targetView) {
+            targetView.classList.add('active');
+        }
+
+        // Active State in Sidebar
+        if(element) {
+            const navLinks = document.querySelectorAll('#sidebar .nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Update Page Header Title
+        const titleMap = {
+            'dashboard': 'সদস্য ড্যাশবোর্ড',
+            'profile': 'আমার প্রোফাইল',
+            'membership': 'ডিজিটাল কার্ড',
+            'verify': 'সদস্য সত্যানুসন্ধান'
+        };
+        document.getElementById('page-header-title').innerText = titleMap[viewName] || 'সদস্য পোর্টাল';
+
+        // Auto Close Sidebar on Mobile
+        if (window.innerWidth < 992) {
+            document.getElementById('sidebar').classList.remove('show');
+        }
+    }
+
+    // Programmatically trigger Bootstrap Tab inside Profile View
+    function enableTab(tabId) {
+        const tabEl = document.getElementById(tabId);
+        if (tabEl) {
+            const tab = new bootstrap.Tab(tabEl);
+            tab.show();
+        }
+    }
+
+    // Toggle Sidebar for Mobile
+    function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('show');
+    }
+
+    // Toggle ID Card Flip Animation
+    function toggleCardFlip() {
+        document.getElementById('idCardContainer').classList.toggle('flipped');
+    }
+
+    // Notice Modal Handler
+    function showNoticeModal() {
+        const noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
+        noticeModal.show();
+    }
+
+    // Dark Mode Toggle
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-bs-theme', newTheme);
+        
+        const icon = document.getElementById('themeIcon');
+        if(newTheme === 'dark') {
+            icon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+        } else {
+            icon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+        }
+    }
+</script>
+</body>
+</html>
