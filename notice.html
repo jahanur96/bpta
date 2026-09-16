@@ -1,104 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Website - Notices</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>নোটিশ | বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি</title>
+    <meta name="description" content="বাংলাদেশ পলিটেকনিক শিক্ষক সমিতির নোটিশ ও বিজ্ঞপ্তি পেজ" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
   </head>
   <body class="notice-page">
-    <div class="bg-dark text-white py-2">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div>
-          <span class="me-3">&#9993; info@school.com</span>
-          <span>&#9742; +880 1700000010</span>
+    <div class="topbar">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="topbar-links">
+          <span><i class="bi bi-envelope-fill"></i> info@bpta-bd.org</span>
+          <span><i class="bi bi-telephone-fill"></i> +৮৮০ ১৭১২-345678</span>
         </div>
-        <div>
-          <a href="login.html" class="text-white text-decoration-none">Login</a>
-          <span id="current-time" class="ms-3 badge bg-primary"></span>
+        <div class="topbar-actions">
+          <a href="login.html">সদস্য লগইন</a>
+          <span id="current-time" class="badge rounded-pill"></span>
         </div>
       </div>
     </div>
 
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm"
-    >
-      <div class="container-fluid px-4">
-        <a class="navbar-brand fw-bold text-primary" href="index.html"
-          >&#127891; SCHOOL LOGO</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+          <img src="images/logo.jfif" alt="বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি" class="brand-logo" />
+          <div class="brand-text-wrap">
+            <div class="brand-name">বাপশিস</div>
+            <small class="brand-subtitle">BPTA</small>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center text-uppercase">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="teacher.html">Teacher</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="student.html">Student</a>
-            </li>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="academic.html"
-                >Academic</a
-              >
-              <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                <li>
-                  <a class="dropdown-item" href="academic.html"
-                    >Academic Programs</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="academic.html#science"
-                    >Science</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="academic.html#arts">Arts</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="academic.html#commerce"
-                    >Commerce</a
-                  >
-                </li>
-              </ul>
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="about.html" aria-expanded="false">আমাদের সম্পর্কে</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="আমাদের সম্পর্কে মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid">
+                  <div class="mega-column">
+                    <h6>সংগঠন</h6>
+                    <a class="dropdown-item" href="history.html">সংগঠনের ইতিহাস</a>
+                    <a class="dropdown-item" href="mission-vision.html">লক্ষ্য ও উদ্দেশ্য</a>
+                    <a class="dropdown-item" href="constitution.html">গঠনতন্ত্র</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>নেতৃত্ব</h6>
+                    <a class="dropdown-item" href="central-commettee.html">কেন্দ্রীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">সভাপতি বক্তব্য</a>
+                    <a class="dropdown-item" href="#">মহাসচিবের বার্তা</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">আমাদের মূল কথা</span>
+                    <h5>শিক্ষকদের অধিকার ও সহযোগিতা</h5>
+                    <p>কারিগরি শিক্ষার মানোন্নয়নে ঐক্যবদ্ধ ও দায়িত্বশীল নেতৃত্ব গড়তে আমরা কাজ করছি।</p>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="result.html">Result</a>
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="login.html" aria-expanded="false">সদস্য</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="সদস্য মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>সদস্য</h6>
+                    <a class="dropdown-item" href="#">সদস্য তালিকা</a>
+                    <a class="dropdown-item" href="#">সদস্য প্রোফাইল</a>
+                    <a class="dropdown-item" href="#">সদস্য সেবা</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>একাউন্ট</h6>
+                    <a class="dropdown-item" href="#">সদস্য নিবন্ধন</a>
+                    <a class="dropdown-item" href="login.html">সদস্য লগইন</a>
+                    <a class="dropdown-item" href="#">পাসওয়ার্ড রিসেট</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">ড্যাশবোর্ড</span>
+                    <h5>সদস্য সুবিধা</h5>
+                    <p>প্রোফাইল, নোটিশ, ইভেন্ট ও ডকুমেন্ট একসাথে সুবিধাজনকভাবে দেখুন।</p>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="notice.html"
-                >Notice</a
-              >
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link" href="teacher.html" aria-expanded="false">কমিটি</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="কমিটি মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>কেন্দ্রীয়</h6>
+                    <a class="dropdown-item" href="central-commettee.html">কেন্দ্রীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">উপদেষ্টা কমিটি</a>
+                    <a class="dropdown-item" href="#">অভ্যন্তরীণ কমিটি</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>অঞ্চলভিত্তিক</h6>
+                    <a class="dropdown-item" href="#">বিভাগীয় কমিটি</a>
+                    <a class="dropdown-item" href="#">জেলা কমিটি</a>
+                    <a class="dropdown-item" href="#">প্রতিষ্ঠান কমিটি</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">সংগঠন</span>
+                    <h5>শক্তিশালী নেতৃত্ব কাঠামো</h5>
+                    <p>কেন্দ্রীয়, বিভাগীয় ও প্রতিষ্ঠানের নেতৃত্বকে সুন্দরভাবে সাজানো হয়েছে।</p>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li class="nav-item ms-lg-3">
-              <a class="btn btn-primary rounded-pill px-4" href="login.html"
-                >Login</a
-              >
+
+            <li class="nav-item dropdown">
+              <div class="nav-dropdown-wrap">
+                <a class="nav-link dropdown-link active" href="notice.html" aria-expanded="false">সংবাদ</a>
+                <button class="dropdown-menu-toggle" type="button" aria-label="সংবাদ মেনু খুলুন" aria-expanded="false">
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-grid three-col">
+                  <div class="mega-column">
+                    <h6>সংগঠনের খবর</h6>
+                    <a class="dropdown-item" href="#">সংগঠনের সংবাদ</a>
+                    <a class="dropdown-item" href="#">সভার নোটিশ</a>
+                    <a class="dropdown-item" href="#">আন্তর্জাতিক খবর</a>
+                  </div>
+                  <div class="mega-column">
+                    <h6>শিক্ষা</h6>
+                    <a class="dropdown-item" href="#">পলিটেকনিক সংবাদ</a>
+                    <a class="dropdown-item" href="#">কারিগরি শিক্ষা সংবাদ</a>
+                    <a class="dropdown-item" href="#">শিক্ষক সম্পর্কিত সংবাদ</a>
+                  </div>
+                  <div class="mega-column highlight-column">
+                    <span class="mini-label">সর্বশেষ</span>
+                    <h5>তথ্যভিত্তিক সংবাদ</h5>
+                    <p>সদস্য ও সমাজের কাছে সঠিক ও দ্রুত তথ্য পৌঁছে দেওয়ার ব্যবস্থা রয়েছে।</p>
+                  </div>
+                </div>
+              </div>
             </li>
+
+            <li class="nav-item"><a class="nav-link" href="#notice">নোটিশ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#events">কর্মসূচি</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">যোগাযোগ</a></li>
           </ul>
         </div>
       </div>
@@ -106,112 +170,105 @@
 
     <header class="notice-hero">
       <div class="container">
-        <div class="notice-breadcrumb">
-          <a href="index.html">Home</a>
-          <span aria-hidden="true">/</span> Notices
-        </div>
-        <h1>School Notices</h1>
-        <p>
-          Find the latest academic updates, important announcements, and
-          community information in one place.
-        </p>
+        <nav aria-label="breadcrumb" class="breadcrumb">
+          <a href="index.html">হোম</a>
+          <span class="mx-2">/</span>
+          <span>নোটিশ</span>
+        </nav>
+        <span class="hero-kicker">latest updates</span>
+        <h1>নোটিশ ও বিজ্ঞপ্তি</h1>
+        <p>সমিতির সর্বশেষ ঘোষণা, সভার সিদ্ধান্ত, কার্যসূচি ও গুরুত্বপূর্ণ আপডেটগুলো এক জায়গায় দেখুন।</p>
       </div>
     </header>
 
     <main class="notice-archive">
       <div class="container">
         <div class="notice-archive-heading">
-          <h2>Latest announcements</h2>
-          <span>3 published notices</span>
+          <h2>সর্বশেষ বিজ্ঞপ্তি</h2>
+          <span>৩টি প্রকাশিত নোটিশ</span>
         </div>
+
         <div class="notice-archive-list">
           <details class="notice-detail" id="exam-schedule" open>
             <summary>
-              <span class="notice-archive-date">27 May 2024</span
-              ><span class="notice-archive-title"
-                >Final examinations begin next Monday</span
-              >
+              <span class="notice-archive-date">২৭ মে ২০২৬</span>
+              <span class="notice-archive-title">ফাইনাল পরীক্ষা আগামী সোমবার শুরু হবে</span>
             </summary>
             <div class="notice-detail-content">
-              Students should review the examination schedule and arrive at
-              school at least 15 minutes before their first paper.
+              শিক্ষার্থীদের জানান দেওয়া হচ্ছে, পরীক্ষার আগে রুটিন দেখে নির্ধারিত সময়ে উপস্থিত হতে হবে। প্রতি পরীক্ষার পূর্বে ১৫ মিনিট আগে বিদ্যালয়ে আসতে অনুরোধ করা হচ্ছে।
             </div>
           </details>
+
           <details class="notice-detail" id="summer-break">
             <summary>
-              <span class="notice-archive-date">01 Jun 2024</span
-              ><span class="notice-archive-title"
-                >Summer vacation begins in June</span
-              >
+              <span class="notice-archive-date">০১ জুন ২০২৬</span>
+              <span class="notice-archive-title">গ্রীষ্মকালীন ছুটি শুরু হবে</span>
             </summary>
             <div class="notice-detail-content">
-              The school will remain closed during the announced summer vacation
-              period. Classes resume according to the academic calendar.
+              সমিতির নির্ধারিত গ্রীষ্মকালীন ছুটির সময়ে সকল কার্যক্রম সাময়িকভাবে বন্ধ থাকবে। নতুন সেশন শুরু হবে শিডিউল অনুযায়ী।
             </div>
           </details>
+
           <details class="notice-detail" id="parent-meeting">
             <summary>
-              <span class="notice-archive-date">08 Jun 2024</span
-              ><span class="notice-archive-title"
-                >Parents and teachers meet on Saturday</span
-              >
+              <span class="notice-archive-date">০৮ জুন ২০২৬</span>
+              <span class="notice-archive-title">সদস্য ও শিক্ষক সমিতি সভার বিজ্ঞপ্তি</span>
             </summary>
             <div class="notice-detail-content">
-              Parents are invited to meet the teaching team and discuss student
-              progress, attendance, and upcoming academic priorities.
+              সকল সদস্য, শিক্ষক ও অগ্রণী ব্যক্তিবর্গকে আগামী সভায় অংশগ্রহণের জন্য অনুরোধ করা হচ্ছে। সভায় সদস্যদের মতামত, উদ্যোগ ও ভবিষ্যৎ পরিকল্পনা আলোচনা হবে।
             </div>
           </details>
         </div>
       </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-cta">
-        <div>
-          <p class="footer-kicker">Your next chapter starts here</p>
-          <h2>Come learn with us.</h2>
-        </div>
-        <a class="footer-cta-link" href="about.html"
-          >Meet our community <span aria-hidden="true">&#8594;</span></a
-        >
-      </div>
-      <div class="container footer-main">
-        <div class="footer-intro">
-          <a class="footer-brand" href="index.html"
-            ><span aria-hidden="true">&#9733;</span> SCHOOL LOGO</a
-          >
-          <p>
-            A welcoming place to think deeply, make boldly, and grow together.
-          </p>
-          <div class="footer-socials" aria-label="Social media links">
-            <a href="#facebook" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
-            <a href="#instagram" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-            <a href="#youtube" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <a class="footer-brand d-flex align-items-center gap-3" href="index.html">
+              <img src="images/logo.jfif" alt="BPTA logo" class="brand-logo small-logo" />
+              <div>
+                <div class="brand-name">বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি</div>
+              </div>
+            </a>
+            <p class="footer-text">কারিগরি শিক্ষার উন্নয়ন, শিক্ষকদের অধিকার ও সামাজিক ঐক্য স্থাপনে আমরা অবিচল।</p>
+          </div>
+
+          <div class="col-md-4 col-lg-2">
+            <h4>দ্রুত লিংক</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+              <li><a href="mission-vision.html">লক্ষ্য ও উদ্দেশ্য</a></li>
+              <li><a href="history.html">ইতিহাস</a></li>
+              <li><a href="constitution.html">গঠনতন্ত্র</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-3">
+            <h4>যোগাযোগ</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:info@bpta-bd.org">info@bpta-bd.org</a></li>
+              <li><a href="tel:+8801712345678">+৮৮০ ১৭১২-345678</a></li>
+              <li>ঢাকা, বাংলাদেশ</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-3">
+            <h4>নোটিশ</h4>
+            <ul class="footer-links">
+              <li><a href="#">সদস্যতা নবায়ন</a></li>
+              <li><a href="#">কর্মসূচি</a></li>
+              <li><a href="#">গবেষণা</a></li>
+              <li><a href="#">ডকুমেন্ট</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-column">
-          <h3>Explore</h3>
-          <a href="about.html">About us</a
-          ><a href="academic.html">Academic programs</a
-          ><a href="teacher.html">Our teachers</a
-          ><a href="notice.html">Notice board</a>
+
+        <div class="footer-bottom">
+          <span>© ২০২৬ বাংলাদেশ পলিটেকনিক শিক্ষক সমিতি</span>
+          <span>সব অধিকার সংরক্ষিত</span>
         </div>
-        <div class="footer-column">
-          <h3>For students</h3>
-          <a href="student.html">Student portal</a
-          ><a href="result.html">Check results</a><a href="login.html">Log in</a
-          ><a href="notice.html#parent-meeting">Parent community</a>
-        </div>
-        <div class="footer-column footer-contact">
-          <h3>Visit us</h3>
-          <p>123 School Road<br />Dhaka, Bangladesh</p>
-          <a href="tel:+8801700000010">+880 1700000010</a
-          ><a href="mailto:info@school.com">info@school.com</a>
-        </div>
-      </div>
-      <div class="container footer-bottom">
-        <span>&copy; 2026School Name. All rights reserved.</span
-        ><span>Built for curious minds.</span>
       </div>
     </footer>
 
