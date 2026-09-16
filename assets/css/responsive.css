@@ -92,7 +92,94 @@
     }
 }
 
+/* ==========================================================
+   GS MESSAGE PAGE RESPONSIVE STYLES
+   ========================================================== */
+@media (max-width: 991.98px) {
+    .gs-message-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-profile-panel {
+        position: static;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .gs-profile-figure {
+        width: min(100%, 420px);
+    }
+
+    .gs-profile-photo {
+        max-width: 100%;
+        width: 100%;
+        height: 350px;
+    }
+
+    .gs-profile-meta {
+        width: 100%;
+    }
+
+    .gs-info-list {
+        width: 100%;
+    }
+
+    .gs-message-card {
+        order: 2;
+    }
+}
+
 @media (max-width: 767.98px) {
+    .gs-message-page .gs-page-hero {
+        padding-top: 4rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .gs-message-main {
+        padding: 3.5rem 0;
+    }
+
+    .gs-message-card {
+        padding: 1.25rem;
+        border-radius: 1.1rem;
+    }
+
+    .gs-message-card::before {
+        border-radius: 1.1rem 1.1rem 0 0;
+    }
+
+    .message-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .gs-message-card blockquote {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 1rem 1rem;
+    }
+
+    .gs-profile-panel {
+        padding: 1rem;
+        border-radius: 1.1rem;
+    }
+
+    .gs-profile-photo {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    .gs-profile-name {
+        font-size: 1.5rem;
+    }
+
+    .gs-info-list li {
+        padding: 0.75rem 0.8rem;
+    }
+
     .topbar-links,
     .topbar-actions {
         justify-content: center;
